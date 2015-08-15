@@ -1,4 +1,12 @@
 @New = React.createClass
+  handleDelete: (e) ->
+    e.preventDefault()
+    $.ajax
+      method: 'DELETE'
+      url: "/news/#{@props.n.id}"
+      dataType: 'JSON'
+      success: () =>
+        @props.handleDeleteNew @props.n
   render: ->
     React.DOM.tr null,
       React.DOM.td null, @props.n.created_at
@@ -7,4 +15,5 @@
       React.DOM.td null,
         React.DOM.a
           className: 'btn'
+          onClick: @handleDelete
           'Delete'
