@@ -1,2 +1,15 @@
-<!-- https://www.airpair.com/reactjs/posts/reactjs-a-guide-for-rails-developers -->
-<%= react_component 'News', { data: @news } %>
+<div class="row">
+  <div class="col m4 categories-container">
+    <ul>
+      <li><a class="btn-floating btn-large waves-effect waves-light blue-grey blue-grey darken-2">Cat. 1</a></li>
+      <li><a class="btn-floating btn-large waves-effect waves-light blue-grey blue-grey darken-2">Cat. 2</a></li>
+      <li><a class="btn-floating btn-large waves-effect waves-light blue-grey blue-grey darken-2">Cat. 3</a></li>
+      <li><a class="btn-floating btn-large waves-effect waves-light blue-grey blue-grey darken-2">Cat. 4</a></li>
+    </ul>
+  </div>
+
+  <div class="col m8 news-container">
+    <!-- https://www.airpair.com/reactjs/posts/reactjs-a-guide-for-rails-developers -->
+    <%= react_component 'News', { data: @news } %>
+  </div>
+</div>
