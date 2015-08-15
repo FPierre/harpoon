@@ -14,4 +14,30 @@
  *= require_self
  */
 
+@import url(http://fonts.googleapis.com/css?family=Roboto+Mono);
 @import 'materialize';
+
+body {
+  @extend .white;
+  @extend .blue-grey-text, .text-darken-2;
+
+
+  .nav-wrapper {
+    @extend .white;
+
+    font-family: 'Roboto Mono';
+
+    a {
+      @extend .blue-grey-text, .text-darken-2;
+    }
+  }
+
+  .categories-container {
+    @extend .blue-grey, .darken-1;
+    @extend .white-text;
+  }
+
+  .news-container {
+
+  }
+}
