@@ -38,6 +38,10 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.3)
     awesome_print (1.6.1)
+    babel-source (5.8.19)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -55,6 +59,7 @@ GEM
     config (1.0.0)
       activesupport (>= 3.0)
       deep_merge (~> 1.0.0)
+    connection_pool (2.2.0)
     debug_inspector (0.0.2)
     deep_merge (1.0.1)
     domain_name (0.5.23)
@@ -78,6 +83,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    materialize-sass (0.97.0)
+      sass (~> 3.3)
     mechanize (2.7.3)
       domain_name (~> 0.5, >= 0.5.1)
       http-cookie (~> 1.0)
@@ -126,6 +133,13 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    react-rails (1.1.0)
+      babel-transpiler (>= 0.7.0)
+      coffee-script-source (~> 1.8)
+      connection_pool
+      execjs
+      rails (>= 3.2)
+      tilt
     sass (3.4.16)
     sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -175,9 +189,11 @@ DEPENDENCIES
   config (~> 1.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  materialize-sass (~> 0.97.0)
   mechanize
   mysql2
   rails (= 4.2.0)
+  react-rails (~> 1.1.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
