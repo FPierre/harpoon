@@ -1,0 +1,24 @@
+default: &default
+  tags:
+    javascript:
+      - javascript
+      - js
+      - meteor
+      - meteorjs
+    ruby:
+      - ruby
+      - 'ruby on rails'
+      - rails
+      - ror
+      - 'active record'
+  websites:
+    hackernews:
+      url: https://news.ycombinator.com/newest
+      dom_selector:
+        rel: nofollow
+production:
+  <<: *default
+test:
+  <<: *default
+development:
+  <<: *default
