@@ -1,13 +1,10 @@
 <div class="row">
-  <div class="col m3 categories-container">
-    <ul>
-      <!-- <li><a class="btn-floating btn-large waves-effect waves-dark blue-grey blue-grey darken-2">All</a></li> -->
-    </ul>
+  <div class="col l3 s12 categories-container">
+    <%= react_component 'Categories', { data: @categories } %>
   </div>
 
-  <div class="col m9 news-container">
+  <div class="col l9 s12 news-container">
     <!-- https://www.airpair.com/reactjs/posts/reactjs-a-guide-for-rails-developers -->
-    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
     <%= react_component 'News', { data: @news } %>
   </div>
 </div>
