@@ -6,7 +6,7 @@ class Crawler
     @selected_news = Hash.new({})
   end
 
-  def grab
+  def get_news
     @websites.each do |website|
       @page = get_page(website[1]['url'])
 

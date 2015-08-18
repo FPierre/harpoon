@@ -16,6 +16,8 @@ default: &default
       url: https://news.ycombinator.com/newest
       dom_selector:
         rel: nofollow
+    rubyflow:
+      url: http://www.rubyflow.com
 production:
   <<: *default
 test:
