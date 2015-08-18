@@ -1,9 +1,8 @@
 class NewsController < ApplicationController
   def index
     @news = New.all
-
     config = Rails.application.config_for(:crawler)
-    @categories = config['tags']
+    @categories = config['tags'].keys
   end
 
   def destroy
