@@ -1,10 +1,10 @@
 @Categories = React.createClass
   getInitialState: ->
-    news: @props.data
+    categories: @props.data
   getDefaultProps: ->
     categories: []
   render: ->
-    React.DOM.ul
-      className: ''
+    React.DOM.div
+      className: 'collection'
       for c in @state.categories
         React.createElement Category, key: c.id, c: c
