@@ -8,12 +8,15 @@
       success: () =>
         @props.handleDeleteNew @props.n
   render: ->
-    React.DOM.tr null,
-      React.DOM.td null, @props.n.created_at
-      React.DOM.td null, @props.n.title
-      React.DOM.td null, @props.n.website
-      React.DOM.td null,
-        React.DOM.a
-          className: 'btn'
-          onClick: @handleDelete
-          'Delete'
+    React.DOM.li
+      className: 'collection-item'
+      React.DOM.a
+        href: @props.n.url
+        React.DOM.span
+          @props.n.category
+        React.DOM.span
+          @props.n.title
+        React.DOM.span
+          @props.n.created_at
+        React.DOM.span
+          @props.n.website

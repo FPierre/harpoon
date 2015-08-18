@@ -10,9 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require materialize-sprockets
+//= require jquery2
 //= require jquery_ujs
+//= require materialize-sprockets
 //= require turbolinks
 //= require react
 //= require react_ujs

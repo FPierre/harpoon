@@ -1,31 +1,40 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
  *= require_tree .
  *= require_self
  */
 
-@import url(http://fonts.googleapis.com/css?family=Roboto+Mono);
+// http://aokolish.me/blog/2011/12/24/at-font-face-with-the-asset-pipeline/
+// @font-face {
+//   font-family: 'Roboto-Regular';
+//   src: url(font-path('roboto/Roboto-Regular.ttf')) format('truetype');
+//   src: url(font-path('roboto/Roboto-Regular.woff')) format('woff');
+//   src: url(font-path('roboto/Roboto-Regular.woff2')) format('woff2');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+// http://blog.silvabox.com/materialize-on-rails-4-with-bower-and-heroku
 @import 'materialize';
+
+// @font-face {
+//   font-family: 'material-design-icons';
+//   src: url(font-path('material-design-icons/Material-Design-Icons.eot')) format('opentype');
+//   src: url(font-path('material-design-icons/Material-Design-Icons.ttf')) format('truetype');
+//   src: url(font-path('material-design-icons/Material-Design-Icons.woff')) format('woff');
+//   src: url(font-path('material-design-icons/Material-Design-Icons.woff2')) format('woff2');
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
 body {
   @extend .white;
   @extend .blue-grey-text, .text-darken-2;
 
-
   .nav-wrapper {
     @extend .white;
 
-    font-family: 'Roboto Mono';
+    // font-family: 'Roboto';
+    // font-weight: 200;
 
     a {
       @extend .blue-grey-text, .text-darken-2;
