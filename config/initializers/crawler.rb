@@ -11,7 +11,7 @@ Rails.application.config.after_initialize do
 
   news.each do |category, news|
     unless New.exists?(title: news[:text], url: news[:url])
-      New.create(title: news[:text], url: news[:url], tag: news[:tag], website: news[:website][1], category: category)
+      New.create(title: news[:text], url: news[:url], tag: news[:tag], website: news[:website][0], category: category)
     end
   end
 end

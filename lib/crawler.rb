@@ -22,6 +22,7 @@ class Crawler
           tags.each do |tag|
             # puts "#{text} match #{tag}" if match_tag(text, tag)
             # selected_news["#{tag}"].merge!({ url: link.href, text: text }) if match_tag(text, tag)
+            ap website
 
             if match_tag(text, tag)
               @selected_news[category.to_sym] = Hash.new if @selected_news[category.to_sym]
