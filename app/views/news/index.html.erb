@@ -1,9 +1,39 @@
 <div class="row">
-  <div class="col l3 s12 categories-container">
+  <div class="categories-container col l3 hide-on-small-only">
+    <h2 class="center-align">Categories</h2>
+
+    <div class="row">
+      <ul>
+        <% @categories.each do |n| %>
+          <li class="col m4"><a class="btn-flat waves-effect"><%= n %></a></li>
+        <% end %>
+
+        <li class="col m4"><a class="btn-flat waves-effect">CAT X</a></li>
+        <li class="col m4"><a class="btn-flat waves-effect">CAT X</a></li>
+        <li class="col m4"><a class="btn-flat waves-effect">CAT X</a></li>
+        <li class="col m4"><a class="btn-flat waves-effect">CAT X</a></li>
+      </ul>
+    </div>
+
     <%= react_component 'Categories', { data: @categories } %>
   </div>
 
-  <div class="col l9 s12 news-container">
+  <div class="news-container col l9 s12">
+    <ul>
+      <% @news.each do |n| %>
+        <li>
+          <a href="<%= n.url %>">
+            <div class="section">
+              <h5><%= n.title %></h5>
+              <p><%= n.created_at %></p>
+            </div>
+          </a>
+        </li>
+
+        <div class="divider"></div>
+      <% end %>
+    </ul>
+
     <!-- https://www.airpair.com/reactjs/posts/reactjs-a-guide-for-rails-developers -->
     <%= react_component 'News', { data: @news } %>
   </div>

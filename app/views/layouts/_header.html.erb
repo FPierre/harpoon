@@ -9,10 +9,13 @@
         <li><a href="badges.html">Components</a></li>
       </ul>
  -->
- <!--      <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-      </ul>-->
+      <ul class="side-nav" id="mobile-demo">
+        <li class="center-align">Categories</li>
+
+        <% @categories.each do |n| %>
+          <li><a><%= n %></a></li>
+        <% end %>
+      </ul>
     </div>
   </nav>
 </header>
