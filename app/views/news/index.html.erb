@@ -1,40 +1,86 @@
 <div class="row">
-  <div class="categories-container col l3 hide-on-small-only">
-    <h2 class="center-align">Categories</h2>
-
+  <div class="col l3 hide-on-small-only">
     <div class="row">
-      <ul>
-        <% @categories.each do |n| %>
-          <li class="col m4"><a class="btn-flat waves-effect"><%= n %></a></li>
-        <% end %>
+      <div class="categories-container col s12 section">
+        <h2 class="center-align">Categories</h2>
 
-        <li class="col m4"><a class="btn-flat waves-effect">CAT X</a></li>
-        <li class="col m4"><a class="btn-flat waves-effect">CAT X</a></li>
-        <li class="col m4"><a class="btn-flat waves-effect">CAT X</a></li>
-        <li class="col m4"><a class="btn-flat waves-effect">CAT X</a></li>
-      </ul>
+        <div class="row">
+          <ul>
+            <% @categories.each do |n| %>
+              <li class="col m4"><a class="btn-flat waves-effect"><%= n %></a></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <h2 class="center-align">Sort</h2>
+
+        <div class="row">
+          <ul>
+            <li class="col m5">
+              <a class="waves-effect waves-darken btn-large green lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Sort by alphabetical order">
+                <i class="material-icons right">sort_by_alpha</i>Alphabetical
+              </a>
+            </li>
+            <li class="col m5">
+              <a class="waves-effect waves-darken btn-large green lighten-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Sort by creation date">
+                <i class="material-icons left">today</i>
+                Creation date
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <h2 class="center-align">Filters</h2>
+
+        <div class="row">
+          <ul>
+            <li class="col m5">
+              <a class="waves-effect waves-darken btn-large green lighten-2">
+                <i class="material-icons right">cloud</i>Hackernews
+              </a>
+            </li>
+            <li class="col m5">
+              <a class="waves-effect waves-darken btn-large green lighten-2">
+                <i class="material-icons left"></i>RubyFlow
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-
-    <%= react_component 'Categories', { data: @categories } %>
   </div>
 
   <div class="news-container col l9 s12">
     <ul>
       <% @news.each do |n| %>
-        <li>
+        <li class="news">
           <a href="<%= n.url %>">
-            <div class="section">
-              <h5><%= n.title %></h5>
-              <p><%= n.created_at %></p>
+            <div class="row section">
+              <div class="col s10">
+                <h5><%= n.title %></h5>
+                <p><%= n.created_at %></p>
+              </div>
+
+              <div class="col s1">
+                <a class="delete btn-floating btn-large waves-effect waves-darken red lighten-2"><i class="material-icons">delete</i></a>
+              </div>
+
+              <div class="col s1">
+                <a class="grade btn-floating btn-large waves-effect waves-darken yellow lighten-2"><i class="material-icons">grade</i></a>
+              </div>
             </div>
           </a>
         </li>
-
-        <div class="divider"></div>
+        <li>
+          <div class="divider"></div>
+        </li>
       <% end %>
     </ul>
 
     <!-- https://www.airpair.com/reactjs/posts/reactjs-a-guide-for-rails-developers -->
-    <%= react_component 'News', { data: @news } %>
   </div>
 </div>

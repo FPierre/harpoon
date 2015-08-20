@@ -32,9 +32,27 @@ body {
 
   .news-container {
     ul {
-      li {
-        a {
+      .news {
+        &:hover {
+          .delete, .grade {
+            @extend .blue-grey-text, .text-darken-2;
 
+            opacity: 1;
+          }
+        }
+
+        a {
+          @extend .blue-grey-text, .text-darken-2;
+
+          -webkit-transition: all 0.1s ease-in;
+             -moz-transition: all 0.1s ease-in;
+              -ms-transition: all 0.1s ease-in;
+               -o-transition: all 0.1s ease-in;
+                 transition: all 0.1s ease-in;
+
+          &.delete, &.grade {
+            opacity: 0;
+          }
         }
       }
     }
