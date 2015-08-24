@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150815091612) do
+ActiveRecord::Schema.define(version: 20150823122841) do
 
-  create_table "news", force: :cascade do |t|
+  create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "title",      limit: 255
     t.string   "website",    limit: 255
     t.string   "url",        limit: 255
