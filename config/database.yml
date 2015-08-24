@@ -2,18 +2,18 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: scrapper
-  password: scrapper
+  username: scraper
+  password: scraper
   host: localhost
 
 development:
   <<: *default
-  database: scrapper_development
+  database: scraper_development
 
 test:
   <<: *default
-  database: scrapper_test
+  database: scraper_test
 
 production:
   <<: *default
-  database: scrapper_production
+  database: scraper_production

@@ -7,11 +7,11 @@ Rails.application.config.after_initialize do
   config  = Rails.application.config_for(:crawler)
   crawler = Crawler.new(config['websites'], config['tags'])
 
-  news = crawler.get_news
+  articles = crawler.get_articles
 
-  news.each do |category, news|
-    unless New.exists?(title: news[:text], url: news[:url])
-      New.create(title: news[:text], url: news[:url], tag: news[:tag], website: news[:website][0], category: category)
+  articles.each do |category, article|
+    unless Article.exists?(title: article[:text], url: article[:url])
+      Article.create(title: article[:text], url: article[:url], tag: article[:tag], website: article[:website][0], category: category)
     end
   end
 end

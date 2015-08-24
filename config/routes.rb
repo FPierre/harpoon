@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get    '/news',     to: 'news#index'
-  delete '/news/:id', to: 'news#destroy'
+  get    '/articles',     to: 'articles#index'
+  delete '/articles/:id', to: 'articles#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -12,11 +12,10 @@
 //
 //= require jquery2
 //= require jquery_ujs
-//= require materialize-sprockets
 //= require turbolinks
-//= require react
-//= require react_ujs
+//= require materialize-sprockets
 //= require main
+//= require channels
 //= require_tree .
 
 // https://dribbble.com/shots/2191473-Questionnaire-Step/attachments/404768

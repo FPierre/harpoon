@@ -1,12 +1,13 @@
 class Crawler
   def initialize(websites, categories)
-    @mechanize     = Mechanize.new
-    @websites      = websites
-    @categories    = categories
-    @selected_news = Hash.new({})
+    @mechanize  = Mechanize.new
+    @websites   = websites
+    @categories = categories
+
+    @selected_articles = Hash.new({})
   end
 
-  def get_news
+  def get_articles
     @websites.each do |website|
       @page = get_page(website[1]['url'])
 
@@ -21,20 +22,18 @@ class Crawler
         @categories.each do |category, tags|
           tags.each do |tag|
             # puts "#{text} match #{tag}" if match_tag(text, tag)
-            # selected_news["#{tag}"].merge!({ url: link.href, text: text }) if match_tag(text, tag)
-            ap website
-
+            # selected_articles["#{tag}"].merge!({ url: link.href, text: text }) if match_tag(text, tag)
             if match_tag(text, tag)
-              @selected_news[category.to_sym] = Hash.new if @selected_news[category.to_sym]
-              @selected_news[category.to_sym].merge!({ text: link.text, url: link.href, tag: tag, website: website })
+              @selected_articles[category.to_sym] = Hash.new if @selected_articles[category.to_sym]
+              @selected_articles[category.to_sym].merge!({ text: link.text, url: link.href, tag: tag, website: website })
               break
             end
           end
         end
       end
 
-      # ap @selected_news
-      return @selected_news
+      # ap @selected_articles
+      return @selected_articles
     end
   end
 

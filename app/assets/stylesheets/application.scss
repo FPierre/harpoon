@@ -6,12 +6,21 @@
 // http://blog.silvabox.com/materialize-on-rails-4-with-bower-and-heroku
 @import 'materialize';
 
+// TODO: Faire une fonction avec param color + intensité, pour darken et lighten
+$blue-grey-lighten-5: #eceff1;
+$blue-grey-lighten-2: #90a4ae;
+$blue-grey-lighten-1: #78909c;
+$blue-grey-darken-1: #546e7a;
+$blue-grey-darken-3: #37474f;
+$blue-grey-darken-4: #263238;
+
 body {
   @extend .white;
   @extend .blue-grey-text, .text-darken-2;
 
   .nav-wrapper {
     @extend .white;
+    @extend .z-depth-1;
 
     font-weight: 300;
 
@@ -20,25 +29,51 @@ body {
     }
   }
 
-  .categories-container {
-    ul {
-      li {
-        a {
+  #actions-container {
+    // background-color: $blue-grey-darken-1;
+    // background-color: $blue-grey-lighten-5;
 
-        }
-      }
+    a {
+      color: $blue-grey-darken-3;
+    }
+
+    #sorts-container {
+
+    }
+
+    #categories-container {
+
+    }
+
+    #websites-container {
+
     }
   }
 
-  .news-container {
+  #news-container {
     ul {
       .news {
+        border: {
+             top: 1px solid $blue-grey-lighten-5;
+           right: 1px solid $blue-grey-lighten-5;
+          bottom: 1px solid white;
+            left: 1px solid $blue-grey-lighten-5;
+        };
+
         &:hover {
           .delete, .grade {
             @extend .blue-grey-text, .text-darken-2;
 
             opacity: 1;
           }
+        }
+
+        h5 {
+
+        }
+
+        p {
+          color: $blue-grey-lighten-2;
         }
 
         a {
