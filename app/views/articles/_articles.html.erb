@@ -1,7 +1,9 @@
-<ul>
-  <% @articles.each do |article| %>
-    <li class="news">
-      <%= render partial: 'article', locals: { article: article } %>
-    </li>
-  <% end %>
-</ul>
+<div class="articles">
+  <ul>
+    <% @articles.each do |article| %>
+      <li>
+        <%= render partial: 'article', locals: { article: article } %>
+      </li>
+    <% end %>
+  </ul>
+</div>

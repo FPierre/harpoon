@@ -1,9 +1,9 @@
-<article>
+<article class="article">
   <a href="<%= article.url %>">
     <div class="row">
       <div class="col s10">
         <h5><%= article.title %></h5>
-        <p><%= article.created_at %></p>
+        <p><%= article.created_at.strftime '%m/%d/%Y' %></p>
       </div>
 
       <div class="col s2">

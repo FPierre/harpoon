@@ -1,9 +1,10 @@
 App.articles = App.cable.subscriptions.create 'ArticlesChannel',
   received: (article) ->
-    $('#articles').append @renderMessage(article)
+    Materialize.toast("<span>Nouvel Article</span><a href='##{article.title}' class='btn-flat yellow-text'>Voir<a>", 3000, 'rounded')
+    $('#articles').prepend @renderMessage(article)
 
   renderMessage: (article) ->
-    "<article>
+    "<article id='#{article.title}' class='article'>
       <a href='#{article.url}'>
         <div class='row'>
           <div class='col s10'>
