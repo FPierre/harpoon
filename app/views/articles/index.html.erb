@@ -1,49 +1,32 @@
 <div class="row">
-  <div id="actions-container" class="col l3 m12 hide-on-small-only">
-    <div class="row">
-      <div class="col m12">
-        <div id="sorts-container">
-          <ul>
-            <li>
-              <a class="btn-large waves-effect waves-darken green lighten-2">
-                <!-- <i class="material-icons right">sort_by_alpha</i> -->
-                Alphabetical
-              </a>
-            </li>
-            <li>
-              <a class="btn-large waves-effect waves-darken green lighten-2">
-                <!-- <i class="material-icons left">today</i> -->
-                Creation date
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+  <!-- <aside id="actions-container" class="col m1 hide-on-small-only"> -->
+  <aside id="actions-container" class="col l1 m2 hide-on-small-only">
+    <ul>
+      <% @categories.each do |n| %>
+        <li><a><%= n %><i class="devicons devicons-javascript"></i></a></li>
+      <% end %>
+    </ul>
+  </aside>
 
-      <div class="col m12">
-        <div id="filters-container">
-          <ul>
-            <% @categories.each do |n| %>
-              <li>
-                <a class="btn-large waves-effect waves-darken indigo lighten-2"><%= n %></a>
-              </li>
-            <% end %>
-          </ul>
-
-          <ul>
-            <li>
-              <a class="btn-large waves-effect waves-darken deep-orange lighten-2">Hackernews</a>
-            </li>
-            <li>
-              <a class="btn-large waves-effect waves-darken deep-orange lighten-2">RubyFlow</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+  <!-- <section id="articles-container" class="col m11 s12"> -->
+  <section id="articles-container" class="col l11 m10 s12">
+    <div id="sorts-container">
+      <ul>
+        <li>
+          <a class="waves-effect btn-flat">
+            <i class="material-icons">sort_by_alpha</i>
+            Alphabetical
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect btn-flat">
+            <i class="material-icons">today</i>
+            Creation date
+          </a>
+        </li>
+      </ul>
     </div>
-  </div>
 
-  <section id="articles-container" class="col l9 s12">
     <%= render partial: 'articles' %>
 
     <!-- https://www.airpair.com/reactjs/posts/reactjs-a-guide-for-rails-developers -->
