@@ -18,8 +18,12 @@ default: &default
       - elk
       - kibana
       - logstash
-    'linux mint':
+    linux mint:
       - mint
+    'material design':
+      - material
+      - flat
+      - 'flat design'
   websites:
     hackernews:
       url: https://news.ycombinator.com/newest
