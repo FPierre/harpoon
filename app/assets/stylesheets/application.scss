@@ -21,56 +21,64 @@ $blue-grey-darken-3: #37474f;
 $blue-grey-darken-4: #263238;
 
 body {
-  @extend .white;
   @extend .blue-grey-text, .text-darken-2;
 
   overflow: hidden;
+}
 
-  .nav-wrapper {
-    @extend .white;
-    @extend .z-depth-1;
+#nav {
+  @extend .white;
+  @extend .z-depth-1;
 
-    font-weight: 300;
+  font-weight: 300;
 
-    li, a {
-      @extend .blue-grey-text, .text-darken-2;
-    }
+  li, a {
+    @extend .blue-grey-text, .text-darken-2;
   }
 
-  #actions-container {
-    height: 100vh;
-    background-color: $blue-grey-darken-2;
+  .button-collapse {
+    margin-left: 10px;
+  }
+}
+
+#aside {
+  height: 100vh;
+  color: $grey-lighten-5;
+  background-color: $blue-grey-darken-2;
+
+  li {
+    @include transition(.1s);
+
+    line-height: 38px;
+
+    &:hover {
+      background-color: $blue-grey-darken-3;
+    }
+
+    a {
+      font: {
+        weight: 300;
+        size: 1.35em;
+      };
+      color: inherit;
+    }
+  }
+}
+
+#content {
+  height: 100vh;
+  background-color: $grey-lighten-5;
+  overflow: auto;
+
+  #sorts-container {
+    margin-top: 30px;
 
     li {
-      @include transition(.1s);
-
-      line-height: 38px;
-
-      &:hover {
-        background-color: $blue-grey-darken-3;
-      }
-
-      a {
-        font-weight: 300;
-        font-size: 1.35em;
-        color: $grey-lighten-5;
-      }
+      display: inline-block;
     }
   }
 
   #articles-container {
-    height: 100vh;
-    background-color: $grey-lighten-5;
-    overflow: auto;
-
-    #sorts-container {
-      margin-top: 30px;
-
-      li {
-        display: inline-block;
-      }
-    }
-
     .articles {
       margin-top: 30px;
 

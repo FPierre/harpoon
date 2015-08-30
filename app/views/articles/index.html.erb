@@ -1,35 +1,23 @@
 <div class="row">
-  <!-- <aside id="actions-container" class="col m1 hide-on-small-only"> -->
-  <aside id="actions-container" class="col l1 m2 hide-on-small-only">
-    <ul>
-      <% @categories.each do |n| %>
-        <li><a><%= n %><i class="devicons devicons-javascript"></i></a></li>
-      <% end %>
-    </ul>
-  </aside>
+  <%= render partial: 'aside' %>
 
-  <!-- <section id="articles-container" class="col m11 s12"> -->
-  <section id="articles-container" class="col l11 m10 s12">
+  <section id="content" class="col l10 m10 s12">
     <div id="sorts-container">
       <ul>
-        <li>
-          <a class="waves-effect btn-flat">
-            <i class="material-icons">sort_by_alpha</i>
-            Alphabetical
-          </a>
-        </li>
-        <li>
-          <a class="waves-effect btn-flat">
-            <i class="material-icons">today</i>
-            Creation date
-          </a>
-        </li>
+        <li><a class="waves-effect btn-flat"><i class="material-icons">sort_by_alpha</i>Alphabetical</a></li>
+        <li><a class="waves-effect btn-flat"><i class="material-icons">today</i>Creation date</a></li>
+      </ul>
+
+      <ul>
+        <li><a class="waves-effect btn-flat"><i class="material-icons">list</i>Small</a></li>
+        <li><a class="waves-effect btn-flat"><i class="material-icons">view_list</i>Big</a></li>
       </ul>
     </div>
 
-    <%= render partial: 'articles' %>
-
-    <!-- https://www.airpair.com/reactjs/posts/reactjs-a-guide-for-rails-developers -->
-    <!-- http://nithinbekal.com/posts/rails-action-cable/ -->
+    <div id="articles-container">
+      <%= render partial: 'articles' %>
+      <!-- https://www.airpair.com/reactjs/posts/reactjs-a-guide-for-rails-developers -->
+      <!-- http://nithinbekal.com/posts/rails-action-cable/ -->
+    </div>
   </section>
 </div>

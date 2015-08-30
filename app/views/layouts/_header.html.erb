@@ -1,39 +1,14 @@
 <header>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo center">Scraper</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+  <nav id="nav">
+    <a href="#!" class="brand-logo center">Scraper</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
-      <ul class="left hide-on-med-and-down">
-        <li><a href=""><i class="material-icons">starred</i></a></li>
-      </ul>
+    <ul class="left hide-on-med-and-down">
+      <li><a href=""><i class="material-icons">starred</i></a></li>
+    </ul>
 
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href=""><i class="material-icons">starred</i></a></li>
-        <li><div class="divider"></div></li>
-
-        <% @categories.each do |n| %>
-          <li><a><%= n %></a></li>
-        <% end %>
-
-        <li><div class="divider"></div></li>
-
-        <li>
-          <a href="" class="">Alphabetical</a>
-        </li>
-        <li>
-          <a href="" class="">Creation date</a>
-        </li>
-
-        <li><div class="divider"></div></li>
-
-        <li>
-          <a href="" class="">Hackernew</a>
-        </li>
-        <li>
-          <a href="" class="">Rubyflow</a>
-        </li>
-      </ul>
-    </div>
+    <ul class="side-nav" id="mobile-demo">
+      <li><div class="divider"></div></li>
+    </ul>
   </nav>
 </header>
