@@ -11,6 +11,15 @@ default: &default
       - rails
       - ror
       - 'active record'
+    devops:
+      - docker
+    elasticsearch:
+      - elastic
+      - elk
+      - kibana
+      - logstash
+    'linux mint':
+      - mint
   websites:
     hackernews:
       url: https://news.ycombinator.com/newest

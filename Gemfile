@@ -1,27 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.3'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
 gem 'turbolinks'
 
 gem 'actioncable', github: 'rails/actioncable'
 gem 'puma'
 
-# gem 'rails', github: "rails/rails"
-# gem 'rack', github: "rack/rack"
-# gem 'sprockets', github: "rails/sprockets"
-# gem 'sprockets-rails', github: "rails/sprockets-rails"
-# gem 'arel', github: "rails/arel"
-# gem 'actioncable', github: "rails/actioncable"
-# gem 'sass-rails', github: 'rails/sass-rails'
-
-
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets
-# gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -51,8 +39,6 @@ gem 'config', '~> 1.0.0'
 gem 'mechanize'
 gem 'whenever', require: false
 gem 'awesome_print'
-# gem 'react-rails', '~> 1.1.0'
-
 # SASS framework to implement Google's material specifications
 gem 'materialize-sass', '~> 0.97.0'
 
