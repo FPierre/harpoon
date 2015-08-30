@@ -1,16 +1,18 @@
 <div class="row">
-  <%= render partial: 'aside' %>
+  <div class="col l2 m2 hide-on-small-only blue-grey darken-2">
+    <%= render partial: 'aside' %>
+  </div>
 
   <section id="content" class="col l10 m10 s12">
-    <div id="sorts-container">
-      <ul>
-        <li><a class="waves-effect btn-flat"><i class="material-icons">sort_by_alpha</i>Alphabetical</a></li>
-        <li><a class="waves-effect btn-flat"><i class="material-icons">today</i>Creation date</a></li>
+    <div id="actions-container">
+      <ul class="left">
+        <li><a class="alpha-sort btn-floating btn-large waves-effect white"><i class="material-icons">sort_by_alpha</i></a></li>
+        <li><a class="date-sort btn-floating btn-large waves-effect white"><i class="material-icons">today</i></a></li>
       </ul>
 
-      <ul>
-        <li><a class="waves-effect btn-flat"><i class="material-icons">list</i>Small</a></li>
-        <li><a class="waves-effect btn-flat"><i class="material-icons">view_list</i>Big</a></li>
+      <ul class="right">
+        <li><a class="half-height btn-floating btn-large waves-effect white"><i class="material-icons">list</i></a></li>
+        <li><a class="full-height btn-floating btn-large waves-effect white"><i class="material-icons">view_list</i></a></li>
       </ul>
     </div>
 

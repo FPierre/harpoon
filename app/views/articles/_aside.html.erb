@@ -1,7 +1,7 @@
-<aside id="aside" class="col l2 m2 hide-on-small-only">
+<aside id="aside">
   <ul>
     <% @categories.each do |n| %>
-      <li><a><%= n %> <span class="hide-on-med-only">(<%= Article.category(n).size %>)</span></a></li>
+      <li><a><%= n %> <span class="hide-on-med-only"><%= Article.category(n).size %></span></a></li>
     <% end %>
   </ul>
 </aside>

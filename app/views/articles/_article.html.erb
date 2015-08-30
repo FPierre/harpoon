@@ -1,14 +1,13 @@
 <article class="article">
   <a href="<%= article.url %>">
-    <div class="row">
+    <div class="row valign-wrapper">
       <div class="col s11">
         <h5><%= article.title %></h5>
-        <p><%= article.created_at.strftime '%m/%d/%Y' %></p>
+        <p><%= article.created_at.strftime '%m/%d/%Y' %> - <%= article.website %></p>
       </div>
 
-      <div class="col s1">
-        <!-- <p class="right-align"><%= article.category %></p> -->
-        <i class="right-align devicons devicons-<%= article.category %>"></i>
+      <div class="col s1 valign">
+        <i class="right devicons devicons-<%= article.category %>"></i>
       </div>
     </div>
   </a>

@@ -1,34 +1,23 @@
 /*
- *= require_tree .
  *= require_self
  */
 
 // http://blog.silvabox.com/materialize-on-rails-4-with-bower-and-heroku
 @import 'materialize';
-
-// TODO: Faire une fonction avec param color + intensité, pour darken et lighten
-$grey-lighten-5: #fafafa;
-$grey-lighten-4: #f5f5f5;
-$grey-lighten-3: #eeeeee;
-$grey-lighten-2: #e0e0e0;
-$blue-grey-lighten-5: #eceff1;
-$blue-grey-lighten-3: #b0bec5;
-$blue-grey-lighten-2: #90a4ae;
-$blue-grey-lighten-1: #78909c;
-$blue-grey-darken-1: #546e7a;
-$blue-grey-darken-2: #455a64;
-$blue-grey-darken-3: #37474f;
-$blue-grey-darken-4: #263238;
+@import 'variables';
+@import 'index';
 
 body {
   @extend .blue-grey-text, .text-darken-2;
 
+  background-color: $grey-lighten-5;
+  display: flex;
   overflow: hidden;
+  flex-direction: column;
 }
 
 #nav {
   @extend .white;
-  @extend .z-depth-1;
 
   font-weight: 300;
 
@@ -38,84 +27,5 @@ body {
 
   .button-collapse {
     margin-left: 10px;
-  }
-}
-
-#aside {
-  height: 100vh;
-  color: $grey-lighten-5;
-  background-color: $blue-grey-darken-2;
-
-  li {
-    @include transition(.1s);
-
-    line-height: 38px;
-
-    &:hover {
-      background-color: $blue-grey-darken-3;
-    }
-
-    a {
-      font: {
-        weight: 300;
-        size: 1.35em;
-      };
-      color: inherit;
-    }
-  }
-}
-
-#content {
-  height: 100vh;
-  background-color: $grey-lighten-5;
-  overflow: auto;
-
-  #sorts-container {
-    margin-top: 30px;
-
-    li {
-      display: inline-block;
-    }
-  }
-
-  #articles-container {
-    .articles {
-      margin-top: 30px;
-
-      .article {
-        @include transition(.1s);
-
-        border-bottom: 1px solid $grey-lighten-3;
-
-        &:hover {
-          background-color: $grey-lighten-3;
-        }
-
-        a {
-          @extend .blue-grey-text, .text-darken-2;
-
-          .row {
-            margin-bottom: 0; // Reset
-          }
-
-          h5 {
-            font: {
-              size: 1.25em;
-              weight: 300;
-            };
-          }
-
-          p {
-            font-size: 0.9em;
-            color: $blue-grey-lighten-2;
-          }
-
-          i {
-            font-size: 1.4em;
-            color: $blue-grey-lighten-2;
-          }
-        }
-      }
-    }
   }
 }
