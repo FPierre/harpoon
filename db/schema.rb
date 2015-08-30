@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150823122841) do
+ActiveRecord::Schema.define(version: 20150830145610) do
 
-  create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "articles", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.string   "website",    limit: 255
     t.string   "url",        limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
     t.string   "category",   limit: 255
     t.string   "tag",        limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end
