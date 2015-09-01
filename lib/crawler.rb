@@ -9,43 +9,34 @@ class Crawler
 
   def get_articles
     @websites.each do |website|
-      @page = get_page(website[1]['url'])
+      page  = @mechanize.get(website[1]['url'])
+      links = page.root.css(website[1]['dom_selector'])
 
-      # @news = get_page_news(website[1]['dom_selector'])
-      # @news = @page.links_with(rel: )
-      @links = @page.links
-      # ap @links
-
-      @links.each do |link|
-        text = normalize(link.text)
-
+      links.each do |link|
         @categories.each do |category, tags|
           tags.each do |tag|
-            # puts "#{text} match #{tag}" if match_tag(text, tag)
-            # selected_articles["#{tag}"].merge!({ url: link.href, text: text }) if match_tag(text, tag)
-            if match_tag(text, tag)
+            if match_tag(normalize(link.text), tag)
               @selected_articles[category.to_sym] = Hash.new if @selected_articles[category.to_sym]
-              @selected_articles[category.to_sym].merge!({ text: link.text, url: link.href, tag: tag, website: website })
+
+              if website[1]['prefix']
+                url = "#{website[1]['prefix']}#{link['href']}"
+              else
+                url = link['href']
+              end
+
+              @selected_articles[category.to_sym].merge!({ text: link.text, url: url, tag: tag, website: website })
               break
             end
           end
         end
       end
-
-      # ap @selected_articles
-      return @selected_articles
     end
+
+    ap @selected_articles
+    return @selected_articles
   end
 
   private
-
-  def get_page(website_url)
-    @mechanize.get(website_url)
-  end
-
-  def get_page_news(dom_selector)
-    @page.search(dom_selector)
-  end
 
   def normalize(string_in)
     string_in.strip.parameterize

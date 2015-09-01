@@ -7,10 +7,10 @@ default: &default
       - meteorjs
     ruby:
       - ruby
-      - 'ruby on rails'
+      - ruby on rails
       - rails
       - ror
-      - 'active record'
+      - active record
     devops:
       - docker
     elasticsearch:
@@ -20,17 +20,20 @@ default: &default
       - logstash
     linux mint:
       - mint
-    'material design':
+    material design:
       - material
-      - flat
-      - 'flat design'
+      - flat design
   websites:
     hackernews:
       url: https://news.ycombinator.com/newest
-      dom_selector:
-        rel: nofollow
-    rubyflow:
-      url: http://www.rubyflow.com
+      dom_selector: '#hnmain table a[href^="http"]'
+    # rubyflow:
+    #   url: http://www.rubyflow.com
+    humancoders:
+      url: http://news.humancoders.com/items/newest
+      dom_selector: '#items .title a[href^="/"]:not(.site_type_link)'
+      prefix: http://news.humancoders.com
+
 production:
   <<: *default
 test:
