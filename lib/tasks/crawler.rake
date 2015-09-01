@@ -6,7 +6,7 @@ namespace :crawler do
     puts 'rake crawler:run'
     # http://www.justinweiss.com/blog/2014/08/25/the-lesser-known-features-in-rails-4-dot-2/
     config  = Rails.application.config_for(:crawler)
-    crawler = Crawler.new(config['websites'], config['tags'])
+    crawler = Crawler.new(config['websites'], config['categories'])
 
     crawler.get_articles.each do |category, article|
       unless Article.exists?(title: article[:text], url: article[:url])

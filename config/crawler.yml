@@ -1,28 +1,46 @@
 default: &default
-  tags:
+  categories:
     javascript:
-      - javascript
-      - js
-      - meteor
-      - meteorjs
+      tags:
+        - javascript
+        - js
+        - meteor
+        - meteorjs
     ruby:
-      - ruby
-      - ruby on rails
-      - rails
-      - ror
-      - active record
+      tags:
+        - ruby
+        - ruby on rails
+        - rails
+        - ror
+        - active record
     devops:
-      - docker
+      icon_name:
+      tags:
+        - devops
+        - docker
     elasticsearch:
-      - elastic
-      - elk
-      - kibana
-      - logstash
+      icon_name:
+      tags:
+        - elasticsearch
+        - elastic
+        - elk
+        - kibana
+        - logstash
     linux mint:
-      - mint
+      icon_name:
+      tags:
+        - linux mint
+        - mint
     material design:
-      - material
-      - flat design
+      icon_name:
+      tags:
+        - material design
+        - material
+        - flat design
+    materializecss:
+      tags:
+        - materializecss
+        - materialize
   websites:
     hackernews:
       url: https://news.ycombinator.com/newest
