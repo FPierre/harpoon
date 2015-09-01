@@ -6,7 +6,7 @@
   li {
     @include transition(.1s);
 
-    line-height: 40px;
+    line-height: 44px;
 
     &:hover {
       background-color: $blue-grey-darken-3;
