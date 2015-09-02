@@ -58,6 +58,8 @@ GEM
     byebug (6.0.2)
     celluloid (0.16.0)
       timers (~> 4.0.0)
+    chart-js-rails (0.0.9)
+      railties (> 3.1)
     chronic (0.10.2)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -97,6 +99,10 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    lograge (0.3.4)
+      actionpack (>= 3)
+      activesupport (>= 3)
+      railties (>= 3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -204,10 +210,12 @@ DEPENDENCIES
   actioncable!
   awesome_print
   byebug
+  chart-js-rails
   coffee-rails (~> 4.1.0)
   config (~> 1.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  lograge
   materialize-sass (~> 0.97.0)
   mechanize
   mysql2

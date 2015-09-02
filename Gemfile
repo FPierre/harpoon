@@ -42,6 +42,9 @@ gem 'awesome_print'
 # SASS framework to implement Google's material specifications
 gem 'materialize-sass', '~> 0.97.0'
 
+gem 'lograge'
+gem 'chart-js-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
