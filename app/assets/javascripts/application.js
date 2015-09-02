@@ -14,7 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require materialize-sprockets
+//= require Chart
 //= require main
+//= require statistics
 //= require channels
 //= require_tree .
 
