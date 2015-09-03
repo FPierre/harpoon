@@ -21,26 +21,11 @@ $(document).ready(function() {
 
   // chartPercentCategories = new Chart($('#chart-percent-categories').get(0).getContext('2d')).Line(percentCategories);
 
-  var percentWebsites = [
-    {
-        value: 300,
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Red"
-    },
-    {
-        value: 50,
-        color: "#46BFBD",
-        highlight: "#5AD3D1",
-        label: "Green"
-    },
-    {
-        value: 100,
-        color: "#FDB45C",
-        highlight: "#FFC870",
-        label: "Yellow"
-    }
-  ];
+  var percentCategories = $('.controller-data').data('percent-categories');
 
-  var myDoughnutChart = new Chart($('#chart-percent-websites').get(0).getContext('2d')).Doughnut(percentWebsites);
+  var options = {
+    segmentShowStroke: false,
+  };
+
+  var myDoughnutChart = new Chart($('#chart-percent-categories').get(0).getContext('2d')).Doughnut(percentCategories, options);
 });
