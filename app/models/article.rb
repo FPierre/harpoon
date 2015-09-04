@@ -55,7 +55,7 @@ class Article < ActiveRecord::Base
     config = Rails.application.config_for(:crawler)
     data   = Hash.new
 
-    data[:labels]   = ['00-04', '04-08', '08-12', '12-14', '14-16', '16-18', '18-20', '20-22', '22-00']
+    data[:labels]   = ['0am-4am', '4am-8am', '8am-12am', '12pm-2pm', '2pm-4pm', '4pm-6pm', '6pm-8pm', '8pm-10pm', '10pm-12pm']
     data[:datasets] = Array.new
 
     config['categories'].keys.each do |category|
@@ -83,16 +83,25 @@ class Article < ActiveRecord::Base
 
   def self.random_color
     [
-      { hex: '#ffebee', rgb: '255, 235, 238' },
-      { hex: '#ffcdd2', rgb: '255, 205, 210' },
       { hex: '#ef9a9a', rgb: '239, 154, 154' },
-      { hex: '#e57373', rgb: '229, 115, 115' },
-      { hex: '#ef5350', rgb: '239, 83, 80' },
-      { hex: '#fce4ec', rgb: '252, 228, 236' },
-      { hex: '#f8bbd0', rgb: '248, 187, 208' },
       { hex: '#f48fb1', rgb: '244, 143, 177' },
-      { hex: '#f06292', rgb: '240, 98, 146' },
-      { hex: '#ec407a', rgb: '236, 64, 122' }
+      { hex: '#ce93d8', rgb: '206, 147, 216' },
+      { hex: '#b39ddb', rgb: '179, 157, 219' },
+      { hex: '#9fa8da', rgb: '159, 168, 218' },
+      { hex: '#90caf9', rgb: '144, 202, 249' },
+      { hex: '#81d4fa', rgb: '129, 212, 250' },
+      { hex: '#80deea', rgb: '129, 212, 250' },
+      { hex: '#80cbc4', rgb: '128, 203, 196' },
+      { hex: '#a5d6a7', rgb: '165, 214, 167' },
+      { hex: '#c5e1a5', rgb: '197, 225, 165' },
+      { hex: '#e6ee9c', rgb: '230, 238, 156' },
+      { hex: '#fff59d', rgb: '255, 245, 157' },
+      { hex: '#ffe082', rgb: '255, 224, 130' },
+      { hex: '#ffcc80', rgb: '255, 204, 128' },
+      { hex: '#ffab91', rgb: '255, 171, 145' },
+      { hex: '#bcaaa4', rgb: '188, 170, 164' },
+      { hex: '#eeeeee', rgb: '238, 238, 238' },
+      { hex: '#b0bec5', rgb: '176, 190, 197' }
     ].sample
   end
 end
