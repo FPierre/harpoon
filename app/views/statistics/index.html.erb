@@ -1,4 +1,8 @@
-<canvas id="chart-percent-categories" width="500" height="400"></canvas>
-<canvas id="chart-percent-websites" width="500" height="400"></canvas>
+<canvas id="chart-percent-categories" width="300" height="300"></canvas>
+<canvas id="chart-percent-categories-days" width="300" height="300"></canvas>
+<canvas id="chart-percent-categories-websites" width="300" height="300"></canvas>
 
-<div class="controller-data" data-percent-categories="<%= @percent_categories.to_json %>"></div>
+<div class="controller-data"
+     data-percent-categories="<%= @percent_categories.to_json %>"
+     data-percent-categories-days="<%= @percent_categories_days.to_json %>"
+     data-percent-categories-websites="<%= @percent_categories_websites.to_json %>"></div>

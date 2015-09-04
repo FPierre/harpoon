@@ -1,5 +1,7 @@
+// $(document).on('ready page:load', function() {
+
 $(document).ready(function() {
-  // var percentCategories = {
+  // var percentCategoriesDays = {
   //   labels: ['javascript', 'ruby', 'devops', 'elasticsearch', 'linux mint'],
   //   datasets: [
   //     {
@@ -22,10 +24,12 @@ $(document).ready(function() {
   // chartPercentCategories = new Chart($('#chart-percent-categories').get(0).getContext('2d')).Line(percentCategories);
 
   var percentCategories = $('.controller-data').data('percent-categories');
-
-  var options = {
-    segmentShowStroke: false,
-  };
-
+  var options = { segmentShowStroke: false };
   var myDoughnutChart = new Chart($('#chart-percent-categories').get(0).getContext('2d')).Doughnut(percentCategories, options);
+
+  var percentCategoriesDays = $('.controller-data').data('percent-categories-days');
+  var myLineChart = new Chart($('#chart-percent-categories-days').get(0).getContext('2d')).Line(percentCategoriesDays);
+
+  var percentCategoriesWebsites = $('.controller-data').data('percent-categories-websites');
+  var myBarChart = new Chart($('#chart-percent-categories-websites').get(0).getContext('2d')).Line(percentCategoriesWebsites);
 });
