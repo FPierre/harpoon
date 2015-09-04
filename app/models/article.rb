@@ -18,7 +18,8 @@ class Article < ActiveRecord::Base
     config = Rails.application.config_for(:crawler)
     data   = Array.new
 
-    config['categories'].keys.each{ |c| data << { label: c, value: Article.category(c).size, color: '#CCC' }}
+    config['categories'].keys.each{ |category| data << { label: category, value: Article.category(category).size, color: Article.random_color[:hex] }}
+
     data
   end
 
@@ -31,18 +32,19 @@ class Article < ActiveRecord::Base
 
     config['categories'].keys.each do |category|
       articles_days = Array.new
+      color = Article.random_color
 
       data[:labels].each{ |day| articles_days << Article.day(day).size }
 
       data[:datasets] << {
         data:                 articles_days,
         label:                category,
-        fillColor:            "rgba(220,220,220,0.2)",
-        pointColor:           "rgba(220,220,220,1)",
-        strokeColor:          "rgba(220,220,220,1)",
-        pointStrokeColor:     "#fff",
-        pointHighlightFill:   "#fff",
-        pointHighlightStroke: "rgba(220,220,220,1)"
+        fillColor:            "rgba(#{color[:rgb]}, 0.2)",
+        pointColor:           "rgba(#{color[:rgb]}, 1)",
+        strokeColor:          "rgba(#{color[:rgb]}, 1)",
+        pointStrokeColor:     color[:hex],
+        pointHighlightFill:   color[:hex],
+        pointHighlightStroke: "rgba(#{color[:rgb]}, 1)"
       }
     end
 
@@ -58,6 +60,7 @@ class Article < ActiveRecord::Base
 
     config['categories'].keys.each do |category|
       articles_hours = Array.new
+      color = Article.random_color
 
       [[0, 4],  [4, 8],   [8, 12],
       [12, 14], [14, 16], [16, 18],
@@ -66,15 +69,30 @@ class Article < ActiveRecord::Base
       data[:datasets] << {
         data:                 articles_hours,
         label:                category,
-        fillColor:            "rgba(220,220,220,0.2)",
-        pointColor:           "rgba(220,220,220,1)",
-        strokeColor:          "rgba(220,220,220,1)",
-        pointStrokeColor:     "#fff",
-        pointHighlightFill:   "#fff",
-        pointHighlightStroke: "rgba(220,220,220,1)"
+        fillColor:            "rgba(#{color[:rgb]}, 0.2)",
+        pointColor:           "rgba(#{color[:rgb]}, 1)",
+        strokeColor:          "rgba(#{color[:rgb]}, 1)",
+        pointStrokeColor:      color[:hex],
+        pointHighlightFill:    color[:hex],
+        pointHighlightStroke: "rgba(#{color[:rgb]}, 1)"
       }
     end
 
     data
+  end
+
+  def self.random_color
+    [
+      { hex: '#ffebee', rgb: '255, 235, 238' },
+      { hex: '#ffcdd2', rgb: '255, 205, 210' },
+      { hex: '#ef9a9a', rgb: '239, 154, 154' },
+      { hex: '#e57373', rgb: '229, 115, 115' },
+      { hex: '#ef5350', rgb: '239, 83, 80' },
+      { hex: '#fce4ec', rgb: '252, 228, 236' },
+      { hex: '#f8bbd0', rgb: '248, 187, 208' },
+      { hex: '#f48fb1', rgb: '244, 143, 177' },
+      { hex: '#f06292', rgb: '240, 98, 146' },
+      { hex: '#ec407a', rgb: '236, 64, 122' }
+    ].sample
   end
 end
