@@ -8,16 +8,11 @@
 @import 'index';
 
 body {
-  @extend .blue-grey-text, .text-darken-2;
-
-  background-color: $grey-lighten-5;
-  display: flex;
-  overflow: hidden;
-  flex-direction: column;
+  @extend .grey.lighten-4;
 }
 
-#nav {
-  @extend .white;
+.nav-wrapper {
+  @extend .grey.lighten-4;
 
   font-weight: 300;
 
@@ -29,3 +24,5 @@ body {
     margin-left: 10px;
   }
 }
+
+

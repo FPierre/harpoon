@@ -1,12 +1,17 @@
 <article class="article">
   <a href="<%= article.url %>">
     <div class="row valign-wrapper">
-      <div class="col s11">
-        <h5><%= article.title %></h5>
-        <p><%= article.created_at.strftime '%m/%d/%Y' %> - <%= article.website %></p>
+      <div class="col s1 valign created-at">
+        <p class="center"><%= article.created_at.strftime '%d' %></p>
+        <p class="center"><%= article.created_at.strftime '%b' %>.</p>
       </div>
 
-      <div class="col s1 valign">
+      <div class="col s10 title">
+        <h3><%= article.title %></h3>
+        <p><%= article.website %></p>
+      </div>
+
+      <div class="col s1 valign category">
         <i class="right devicons devicons-<%= article.category %>"></i>
       </div>
     </div>
