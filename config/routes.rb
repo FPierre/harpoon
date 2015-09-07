@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get    '/articles',     to: 'articles#index'
-  delete '/articles/:id', to: 'articles#destroy'
+  get    '/articles',               to: 'articles#index'
+  delete '/articles/:id',           to: 'articles#destroy'
+  post '/articles/half-size-state', to: 'articles#half_size_state', constraints: { active: true|false, only_ajax: true }
 
   get '/statistics', to: 'statistics#index'
 
