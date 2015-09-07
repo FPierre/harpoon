@@ -21,79 +21,77 @@
 }
 
 .articles-wrapper {
-  .articles {
-    .article {
-      border-bottom: 1px solid $grey-lighten-2;
+  .article {
+    border-bottom: 1px solid $grey-lighten-2;
 
-      &:hover {
-        @extend .grey.lighten-3;
-      }
+    &:hover {
+      @extend .grey.lighten-3;
+    }
 
-      &.half-height {
-        a {
-          .created-at {
-            p:first-child {
-              font-size: 1em;
-            }
-
-            p:last-child {
-              font-size: 0.8em;
-            }
-          }
-
-          .title {
-            h3 {
-              font-size: 1em;
-            }
-
-            p {
-              display: none;
-            }
-          }
-
-          .category {
-            i {
-              font-size: 1em;
-            }
-          }
-        }
-      }
-
+    &.half-height {
       a {
-        @extend .blue-grey-text, .text-darken-1;
-        @include transition(.1s);
-
-        .row {
-          margin-bottom: 0; // Reset
-        }
-
         .created-at {
           p:first-child {
-            margin-bottom: 0;
-            line-height: 1em;
-            font-weight: 700;
-            font-size: 1.6em;
+            font-size: 1em;
           }
 
           p:last-child {
-            margin-top: 0;
-            font-size: 1.2em;
+            font-size: 0.8em;
           }
         }
 
         .title {
           h3 {
-            font: {
-              size: 1.3em;
-              weight: 300;
-            };
+            font-size: 1em;
+          }
+
+          p {
+            display: none;
           }
         }
 
         .category {
           i {
-            font-size: 1.4em;
+            font-size: 1em;
           }
+        }
+      }
+    }
+
+    a {
+      @extend .blue-grey-text, .text-darken-1;
+      @include transition(.1s);
+
+      .row {
+        margin-bottom: 0; // Reset
+      }
+
+      .created-at {
+        p:first-child {
+          margin-bottom: 0;
+          line-height: 1em;
+          font-weight: 700;
+          font-size: 1.6em;
+        }
+
+        p:last-child {
+          margin-top: 0;
+          font-size: 1.2em;
+        }
+      }
+
+      .title {
+        h3 {
+          font: {
+            size: 1.3em;
+            weight: 300;
+          };
+        }
+      }
+
+      .category {
+        i {
+          font-size: 1.4em;
         }
       }
     }
