@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require materialize-sprockets
 //= require Chart
-//= require main
+//= require articles
 //= require statistics
 //= require channels
 //= require_tree .
