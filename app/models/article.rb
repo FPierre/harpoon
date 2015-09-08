@@ -1,16 +1,16 @@
 class Article < ActiveRecord::Base
-  scope :category, ->(category) { where(category: category) }
-  scope :tag, ->(tag) { where(tag: tag) }
+  scope :by_category, ->(category){ where(category: category) }
+  scope :by_tag, ->(tag){ where(tag: tag) }
 
   after_commit{ ArticleRelayJob.perform_later(self) }
 
-  def self.day(day)
+  def self.by_day(day)
     day = day.capitalize.to_s if day.is_a? Symbol
 
     Article.all.select{ |article| article.created_at.strftime("%A") == day }
   end
 
-  def self.hour(start, stop)
+  def self.by_hour(start, stop)
     Article.all.select{ |article| article.created_at.hour.between?(start, stop) }
   end
 
@@ -18,7 +18,7 @@ class Article < ActiveRecord::Base
     config = Rails.application.config_for(:crawler)
     data   = Array.new
 
-    config['categories'].keys.each{ |category| data << { label: category, value: Article.category(category).size, color: Article.random_color[:hex] }}
+    config['categories'].keys.each{ |category| data << { label: category, value: Article.by_category(category).size, color: Article.random_color[:hex] }}
 
     data
   end
@@ -34,7 +34,7 @@ class Article < ActiveRecord::Base
       articles_days = Array.new
       color = Article.random_color
 
-      data[:labels].each{ |day| articles_days << Article.day(day).size }
+      data[:labels].each{ |day| articles_days << Article.by_category(category).by_day(day).size }
 
       data[:datasets] << {
         data:                 articles_days,
@@ -64,7 +64,7 @@ class Article < ActiveRecord::Base
 
       [[0, 4],  [4, 8],   [8, 12],
       [12, 14], [14, 16], [16, 18],
-      [18, 20], [20, 22], [22, 00]].each{ |hour| articles_hours << Article.hour(hour[0], hour[1]).size }
+      [18, 20], [20, 22], [22, 00]].each{ |hour| articles_hours << Article.by_category(category).by_hour(hour[0], hour[1]).size }
 
       data[:datasets] << {
         data:                 articles_hours,
