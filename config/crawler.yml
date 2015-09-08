@@ -44,8 +44,10 @@ default: &default
     hackernews:
       url: https://news.ycombinator.com/newest
       dom_selector: '#hnmain table a[href^="http"]'
-    # rubyflow:
-    #   url: http://www.rubyflow.com
+    rubyflow:
+      url: http://www.rubyflow.com
+      dom_selector: '.inner.posts .post .body h1 a'
+      prefix: http://www.rubyflow.com
     humancoders:
       url: http://news.humancoders.com/items/newest
       dom_selector: '#items .title a[href^="/"]:not(.site_type_link)'
