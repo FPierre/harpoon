@@ -1,9 +1,8 @@
 class ArticlesController < ApplicationController
-  def index
-    @articles = Article.all.order(created_at: :desc)
-    config = Rails.application.config_for(:crawler)
-    @categories = config['categories'].keys
+  before_action :set_categories
 
+  def index
+    @articles  = Article.all.order(created_at: :desc)
     @half_size = cookies[:half_size]
   end
 
@@ -20,5 +19,12 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.json { render status: :ok }
     end
+  end
+
+  private
+
+  def set_categories
+    config = Rails.application.config_for(:crawler)
+    @categories = config['categories'].keys
   end
 end
