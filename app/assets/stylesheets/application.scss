@@ -5,24 +5,16 @@
 // http://blog.silvabox.com/materialize-on-rails-4-with-bower-and-heroku
 @import 'materialize';
 @import 'variables';
-@import 'index';
+@import 'header';
+@import 'articles/index';
+@import 'statistics/index';
 
 body {
   @extend .grey.lighten-4;
-}
 
-.nav-wrapper {
-  @extend .grey.lighten-4;
-
-  font-weight: 300;
-
-  li, a {
-    @extend .blue-grey-text, .text-darken-2;
-  }
-
-  .button-collapse {
-    margin-left: 10px;
+  main {
+    .col.s12 {
+      padding: 0;
+    }
   }
 }
-
-
