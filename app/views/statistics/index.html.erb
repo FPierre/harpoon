@@ -16,19 +16,26 @@
 
     <div class="col s2">
       <div class="card-panel center-align">
-        <p></p>
+        <p><%= @websites.size %></p>
+        <p>Sites Web</p>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <canvas id="chart-percent-categories" width="300" height="300"></canvas>
-    <canvas id="chart-percent-categories-days" width="300" height="300"></canvas>
-    <canvas id="chart-percent-categories-websites" width="300" height="300"></canvas>
+  <div class="card-panel">
+    <canvas id="chart-percent-categories" height="350"></canvas>
+  </div>
+
+  <div class="card-panel">
+    <canvas id="chart-percent-categories-days" height="350"></canvas>
+  </div>
+
+  <div class="card-panel">
+    <canvas id="chart-percent-categories-hours" height="350"></canvas>
   </div>
 </div>
 
 <div class="controller-data"
      data-percent-categories="<%= @percent_categories.to_json %>"
      data-percent-categories-days="<%= @percent_categories_days.to_json %>"
-     data-percent-categories-websites="<%= @percent_categories_websites.to_json %>"></div>
+     data-percent-categories-hours="<%= @percent_categories_hours.to_json %>"></div>

@@ -30,6 +30,6 @@ $(document).ready(function() {
   var percentCategoriesDays = $('.controller-data').data('percent-categories-days');
   var myLineChart = new Chart($('#chart-percent-categories-days').get(0).getContext('2d')).Line(percentCategoriesDays);
 
-  var percentCategoriesWebsites = $('.controller-data').data('percent-categories-websites');
-  var myBarChart = new Chart($('#chart-percent-categories-websites').get(0).getContext('2d')).Line(percentCategoriesWebsites);
+  var percentCategoriesHours = $('.controller-data').data('percent-categories-hours');
+  var myBarChart = new Chart($('#chart-percent-categories-hours').get(0).getContext('2d')).Line(percentCategoriesHours);
 });

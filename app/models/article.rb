@@ -1,15 +1,18 @@
 class Article < ActiveRecord::Base
   scope :by_category, ->(category){ where(category: category) }
   scope :by_tag, ->(tag){ where(tag: tag) }
+  scope :by_website, ->(website){ where(website: website) }
 
   after_commit{ ArticleRelayJob.perform_later(self) }
 
+  # TODO Le passer en scope ?
   def self.by_day(day)
     day = day.capitalize.to_s if day.is_a? Symbol
 
     Article.all.select{ |article| article.created_at.strftime("%A") == day }
   end
 
+  # TODO Le passer en scope ?
   def self.by_hour(start, stop)
     Article.all.select{ |article| article.created_at.hour.between?(start, stop) }
   end
@@ -51,7 +54,7 @@ class Article < ActiveRecord::Base
     data
   end
 
-  def self.percent_categories_websites
+  def self.percent_categories_hours
     config = Rails.application.config_for(:crawler)
     data   = Hash.new
 
@@ -79,6 +82,10 @@ class Article < ActiveRecord::Base
     end
 
     data
+  end
+
+  def self.percent_categories_websites
+
   end
 
   def self.random_color

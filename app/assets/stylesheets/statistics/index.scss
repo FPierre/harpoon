@@ -1,3 +1,18 @@
 .card-panel {
   @extend .white;
+  @extend .blue-grey-text, .text-darken-2;
+
+  p:first-child {
+    margin-top: 10px;
+    margin-bottom: 0;
+    line-height: 1em;
+    font: {
+      weight: 700;
+      size: 2.1em;
+    };
+  }
+
+  p:last-child {
+    margin-top: 0;
+  }
 }
