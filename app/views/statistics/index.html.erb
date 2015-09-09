@@ -1,6 +1,32 @@
-<canvas id="chart-percent-categories" width="300" height="300"></canvas>
-<canvas id="chart-percent-categories-days" width="300" height="300"></canvas>
-<canvas id="chart-percent-categories-websites" width="300" height="300"></canvas>
+<div class="container">
+  <div class="row">
+    <div class="col s2">
+      <div class="card-panel center-align">
+        <p><%= Article.all.size %></p>
+        <p>Articles</p>
+      </div>
+    </div>
+
+    <div class="col s2">
+      <div class="card-panel center-align">
+        <p><%= @categories.size %></p>
+        <p>Catégories</p>
+      </div>
+    </div>
+
+    <div class="col s2">
+      <div class="card-panel center-align">
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <canvas id="chart-percent-categories" width="300" height="300"></canvas>
+    <canvas id="chart-percent-categories-days" width="300" height="300"></canvas>
+    <canvas id="chart-percent-categories-websites" width="300" height="300"></canvas>
+  </div>
+</div>
 
 <div class="controller-data"
      data-percent-categories="<%= @percent_categories.to_json %>"
