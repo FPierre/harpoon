@@ -21,9 +21,9 @@ jQuery(document).ready(function($) {
     // console.log(this, e);
     $('#article-actions-modal .modal-content h4').text($('.title h3', this).text());
     $('#article-actions-modal .modal-content p').text($('.title p', this).text());
-    $('#article-actions-modal .modal-footer .delete').attr('href', '/article/' + $(this).data('id'));
-    $('#article-actions-modal .modal-footer .keep').attr('href', '/article/' + $(this).data('id'));
-    $('#article-actions-modal .modal-footer .read-later').attr('href', '/article/' + $(this).data('id'));
+    $('#article-actions-modal .modal-footer .delete').attr('href', '/articles/' + $(this).data('id'));
+    $('#article-actions-modal .modal-footer .keep').attr('href', '/articles/' + $(this).data('id'));
+    $('#article-actions-modal .modal-footer .read-later').attr('href', '/articles/' + $(this).data('id'));
 
     $('#article-actions-modal').openModal();
   });
