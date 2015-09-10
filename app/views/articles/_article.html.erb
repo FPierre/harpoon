@@ -1,19 +1,19 @@
 <article class="article <%= half-size if @half_size %>">
-  <a href="<%= article.url %>">
-    <div class="row valign-wrapper">
-      <div class="col s1 valign created-at">
-        <p class="center"><%= article.created_at.strftime '%d' %></p>
-        <p class="center"><%= article.created_at.strftime '%b' %>.</p>
-      </div>
+  <div class="row valign-wrapper">
+    <div class="col s1 valign created-at">
+      <p class="center"><%= article.created_at.strftime '%d' %></p>
+      <p class="center"><%= article.created_at.strftime '%b' %>.</p>
+    </div>
 
-      <div class="col s10 title">
+    <div class="col s10 title">
+      <a href="<%= article.url %>">
         <h3><%= article.title %></h3>
         <p><%= article.website %></p>
-      </div>
-
-      <div class="col s1 valign category">
-        <i class="right devicons devicons-<%= article.category %>"></i>
-      </div>
+      </a>
     </div>
-  </a>
+
+    <div class="col s1 valign category">
+      <i class="right devicons devicons-<%= article.category %>"></i>
+    </div>
+  </div>
 </article>
