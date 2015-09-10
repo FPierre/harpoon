@@ -22,65 +22,37 @@
 
 .articles-wrapper {
   .article {
+    @extend .blue-grey-text, .text-darken-1;
+    @include transition(.1s);
+
     border-bottom: 1px solid $grey-lighten-2;
 
-    &:hover {
-      @extend .grey.lighten-3;
+    .row {
+      margin-bottom: 0; // Reset
     }
 
-    &.half-height {
+    .created-at {
+      cursor: pointer;
+
+      p:first-child {
+        margin-bottom: 0;
+        line-height: 1em;
+        font: {
+          weight: 700;
+          size: 1.6em;
+        };
+      }
+
+      p:last-child {
+        margin-top: 0;
+        font-size: 1.2em;
+      }
+    }
+
+    .title {
       a {
-        .created-at {
-          p:first-child {
-            font-size: 1em;
-          }
+        color: inherit;
 
-          p:last-child {
-            font-size: 0.8em;
-          }
-        }
-
-        .title {
-          h3 {
-            font-size: 1em;
-          }
-
-          p {
-            display: none;
-          }
-        }
-
-        .category {
-          i {
-            font-size: 1em;
-          }
-        }
-      }
-    }
-
-    a {
-      @extend .blue-grey-text, .text-darken-1;
-      @include transition(.1s);
-
-      .row {
-        margin-bottom: 0; // Reset
-      }
-
-      .created-at {
-        p:first-child {
-          margin-bottom: 0;
-          line-height: 1em;
-          font-weight: 700;
-          font-size: 1.6em;
-        }
-
-        p:last-child {
-          margin-top: 0;
-          font-size: 1.2em;
-        }
-      }
-
-      .title {
         h3 {
           font: {
             size: 1.3em;
@@ -88,13 +60,69 @@
           };
         }
       }
+    }
+
+    .category {
+      i {
+        font-size: 1.4em;
+      }
+    }
+
+    &:hover {
+      @extend .grey.lighten-3;
+    }
+
+    &.half-height {
+      .created-at {
+        p:first-child {
+          font-size: 1em;
+        }
+
+        p:last-child {
+          font-size: 0.8em;
+        }
+      }
+
+      .title {
+         h3 {
+          font-size: 1em;
+        }
+
+        p {
+          display: none;
+        }
+      }
 
       .category {
         i {
-          font-size: 1.4em;
+          font-size: 1em;
         }
       }
     }
+
+    &.on-update {
+      @extend .grey.lighten-2;
+
+      .title {
+        a {
+          display: none;
+        }
+
+        .actions {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.up {
+  @include transition(.1s);
+
+  opacity: 0.2;
+
+  &:hover {
+    opacity: 1;
   }
 }
 
