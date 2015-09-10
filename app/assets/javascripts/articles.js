@@ -34,15 +34,34 @@ jQuery(document).ready(function($) {
   });
 
   $('#article-actions-modal .delete').click(function() {
-
+    $.ajax({
+      url:      $(this).attr('href'),
+      method:   'delete',
+      success: function(data) {
+      }
+    });
   });
 
   $('#article-actions-modal .keep').click(function() {
-
+    $.ajax({
+      url:      $(this).attr('href'),
+      data:     { action: 'keep' },
+      method:   'post',
+      dataType: 'json',
+      success: function(data) {
+      }
+    });
   });
 
   $('#article-actions-modal .read-later').click(function() {
-
+    $.ajax({
+      url:      $(this).attr('href'),
+      data:     { action: 'read_later' },
+      method:   'post',
+      dataType: 'json',
+      success: function(data) {
+      }
+    });
   });
 
 
