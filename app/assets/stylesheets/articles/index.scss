@@ -25,12 +25,6 @@
     @extend .blue-grey-text, .text-darken-1;
     @include transition(.1s);
 
-    border-bottom: 1px solid $grey-lighten-2;
-
-    .row {
-      margin-bottom: 0; // Reset
-    }
-
     .created-at {
       cursor: pointer;
 
@@ -125,36 +119,3 @@
     opacity: 1;
   }
 }
-
-
-
-//       .article {
-//         &.half-height {
-//           h3 {
-//             font-size: 1.15em;
-//           }
-
-//           p {
-//             display: none;
-//           }
-
-//           i {
-//             font-size: 1em;
-//           }
-//         }
-
-//         a {
-//           @extend .blue-grey-text, .text-darken-2;
-
-//           p {
-//             font-size: 0.9em;
-//             color: $blue-grey-lighten-2;
-//           }
-
-//           i {
-//             font-size: 1.45em;
-//             color: $blue-grey-lighten-2;
-//           }
-//         }
-//       }
-//     }
