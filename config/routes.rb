@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get    '/articles',               to: 'articles#index'
-  delete '/articles/:id',           to: 'articles#destroy'
-  post '/articles/half-size-state', to: 'articles#half_size_state', constraints: { active: true|false, only_ajax: true }
+  get    '/articles',                 to: 'articles#index'
+  post   '/articles/:id',             to: 'articles#action'
+  delete '/articles/:id',             to: 'articles#destroy'
+  post   '/articles/half-size-state', to: 'articles#half_size_state', constraints: { active: true|false, only_ajax: true }
 
+  get '/settings', to: 'settings#index'
   get '/statistics', to: 'statistics#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
