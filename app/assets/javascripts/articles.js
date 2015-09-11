@@ -64,20 +64,6 @@ jQuery(document).ready(function($) {
     });
   });
 
-
-  // $('.article .created-at').click(function() {
-  //   // TODO Trouver un moyen plus élégant de cherche .article parent
-  //   $article = $(this).parent().parent();
-
-  //   if ($article.hasClass('on-update')) {
-  //     $article.removeClass('on-update');
-  //   }
-  //   else {
-  //     $('.article.on-update').removeClass('on-update');
-  //     $article.addClass('on-update');
-  //   }
-  // });
-
   $('.full-height').click(function() {
     $.ajax({
       url:      '/articles/half-size-state',

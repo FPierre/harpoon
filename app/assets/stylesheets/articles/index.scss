@@ -93,20 +93,6 @@
         }
       }
     }
-
-    &.on-update {
-      @extend .grey.lighten-2;
-
-      .title {
-        a {
-          display: none;
-        }
-
-        .actions {
-          display: block;
-        }
-      }
-    }
   }
 }
 
