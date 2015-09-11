@@ -33,6 +33,24 @@
       margin-bottom: 0;
     }
 
+    &.keep {
+      .keep {
+        i {
+          @extend .amber-text;
+        }
+      }
+    }
+
+    .keep {
+      i {
+        @include transition(.1s);
+
+        &:hover {
+          @extend .amber-text;
+        }
+      }
+    }
+
     .created-at {
       cursor: pointer;
 
