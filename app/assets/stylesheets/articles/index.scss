@@ -25,6 +25,10 @@
     @extend .blue-grey-text, .text-darken-1;
     @include transition(.1s);
 
+    &.card-panel {
+      padding: 0;
+    }
+
     .row {
       margin-bottom: 0;
     }
