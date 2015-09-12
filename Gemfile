@@ -33,8 +33,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# TODO A buter (cf Rails 4.2 config_for)
-gem 'config', '~> 1.0.0'
 # Crawler to get websites' informations
 gem 'mechanize'
 gem 'whenever', require: false

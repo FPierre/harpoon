@@ -68,11 +68,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
-    config (1.0.0)
-      activesupport (>= 3.0)
-      deep_merge (~> 1.0.0)
     debug_inspector (0.0.2)
-    deep_merge (1.0.1)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
     em-hiredis (0.3.0)
@@ -212,7 +208,6 @@ DEPENDENCIES
   byebug
   chart-js-rails
   coffee-rails (~> 4.1.0)
-  config (~> 1.0.0)
   jbuilder (~> 2.0)
   jquery-rails
   lograge
