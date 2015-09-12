@@ -8,17 +8,6 @@ Rails.application.routes.draw do
   get '/settings', to: 'settings#index'
   get '/statistics', to: 'statistics#index'
 
-  devise_for :users,
-    path: '/administration',
-    path_names: {
-      sign_in:      'login',
-      sign_up:      'sign_up',
-      sign_out:     'logout',
-      password:     'secret',
-      registration: 'register',
-      confirmation: 'verification'
-    }
-
   root to: 'articles#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
