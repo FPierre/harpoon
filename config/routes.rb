@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get    '/articles',                 to: 'articles#index'
   post   '/articles/:id',             to: 'articles#action'
   delete '/articles/:id',             to: 'articles#destroy'
