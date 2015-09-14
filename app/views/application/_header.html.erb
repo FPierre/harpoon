@@ -2,10 +2,10 @@
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="button-collapse show-on-large" data-activates="mobile-demo"><i class="material-icons">menu</i></a>
+        <a href="#" class="button-collapse show-on-large" data-activates="main-sidebar"><i class="material-icons">menu</i></a>
         <a href="#!" class="brand-logo center">Scraper</a>
 
-        <ul class="side-nav" id="mobile-demo">
+        <ul class="side-nav" id="main-sidebar">
           <li><%= link_to 'Settings', settings_path if current_user %></li>
           <li><%= link_to 'Statistics', statistics_path %></li>
 
@@ -16,7 +16,11 @@
           <% end %>
         </ul>
 
-        <a href="#" class="button-collapse right" data-activates="mobile-demo"><i class="material-icons">person</i></a>
+        <a href="#" class="button-collapse show-on-large right" data-activates="account-sidebar"><i class="material-icons">person</i></a>
+
+        <ul class="side-nav" id="account-sidebar">
+          <li><%= link_to 'Settings', settings_path if current_user %></li>
+        </ul>
       </div>
     </nav>
   </div>

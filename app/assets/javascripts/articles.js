@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {
-  $('.button-collapse').sideNav();
+  $('.button-collapse[data-activates=main-sidebar]').sideNav();
+  $('.button-collapse[data-activates=account-sidebar]').sideNav({ edge: 'right' });
 
   // TODO Passer à Toggle
   $('.half-height').click(function() {
