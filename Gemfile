@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.3'
+
 gem 'turbolinks'
 
 gem 'actioncable', github: 'rails/actioncable'
+
 gem 'puma'
 
 # Use mysql as the database for Active Record
@@ -24,12 +26,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -37,13 +33,18 @@ gem 'devise'
 
 # Crawler to get websites' informations
 gem 'mechanize'
+
 gem 'whenever', require: false
-gem 'awesome_print'
 # SASS framework to implement Google's material specifications
 gem 'materialize-sass', '~> 0.97.0'
 
 gem 'lograge'
+
 gem 'chart-js-rails'
+
+gem 'thin', '~> 1.6.3'
+
+gem 'quiet_assets', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,5 +55,7 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'awesome_print'
 end
 
