@@ -1,0 +1,7 @@
+@mixin body-background-color {
+  @extend .blue-grey.darken-3;
+}
+
+@mixin header-background-color {
+  @extend .blue-grey.darken-1;
+}

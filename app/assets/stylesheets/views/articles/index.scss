@@ -1,3 +1,13 @@
+.pagination {
+  a {
+    @extend .waves-effect;
+  }
+
+  .active {
+
+  }
+}
+
 .content {
 
 }
