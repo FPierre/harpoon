@@ -8,12 +8,12 @@ default: &default
 
 development:
   <<: *default
-  database: scraper_development
+  database: harpoon_development
 
 test:
   <<: *default
-  database: scraper_test
+  database: harpoon_test
 
 production:
   <<: *default
-  database: scraper_production
+  database: harpoon_production
