@@ -2,17 +2,15 @@
  *= require_self
  */
 
+@import 'bootstrap-variables';
+@import 'bootstrap-flex';
+
 // http://blog.silvabox.com/materialize-on-rails-4-with-bower-and-heroku
-@import 'materialize';
-@import 'variables';
-@import 'header';
-@import 'articles/index';
-@import 'statistics/index';
-
-body {
-  @extend .grey.lighten-4;
-
-  main {
-
-  }
-}
+@import 'base/variables';
+@import 'components/buttons';
+@import 'layouts/header';
+@import 'layouts/layout';
+@import 'partials';
+@import 'themes/dark';
+@import 'themes/light';
+@import 'views/*';
