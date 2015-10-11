@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+  belongs_to :website
+
   after_commit{ ArticleRelayJob.perform_later(self) }
 
   scope :by_category, ->(category){ where(category: category) }
