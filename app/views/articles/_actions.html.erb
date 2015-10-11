@@ -1,0 +1,34 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="articles-website-filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Websites
+  </button>
+
+  <div class="dropdown-menu" aria-labelledby="articles-website-filter">
+    <% @websites.each do |website| %>
+      <a class="dropdown-item" href="#"><%= website.name %></a>
+    <% end %>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="articles-category-filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Categories
+  </button>
+
+  <div class="dropdown-menu" aria-labelledby="articles-category-filter">
+    <% @categories.each do |category| %>
+      <a class="dropdown-item" href="#"><%= category.name %></a>
+    <% end %>
+  </div>
+</div>
+
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary active">
+    <input type="radio" name="height" value="half" autocomplete="off" checked>
+    <i class="material-icons">list</i>
+  </label>
+  <label class="btn btn-primary">
+    <input type="radio" name="height" value="full" autocomplete="off">
+    <i class="material-icons">view_list</i>
+  </label>
+</div>
