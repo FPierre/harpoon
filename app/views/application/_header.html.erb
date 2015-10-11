@@ -1,21 +1,15 @@
-<header class="header">
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo center">Scraper</a>
-        <a href="#" class="button-collapse" data-activates="mobile-demo"><i class="material-icons">menu</i></a>
+<nav class="navbar">
+  <%= link_to 'Harpoon', root_path, class: 'navbar-brand' %>
 
-        <ul class="side-nav" id="mobile-demo">
-          <li><%= link_to 'Settings', settings_path %></li>
-          <li><%= link_to 'Statistics', statistics_path %></li>
-
-          <li><div class="divider"></div></li>
-
-          <% @categories.each do |category| %>
-            <li><a><%= category %><%= Article.by_category(category).size %></span></a></li>
-          <% end %>
-        </ul>
-      </div>
-    </nav>
-  </div>
-</header>
+  <ul class="nav navbar-nav">
+    <li class="nav-item">
+      <%= link_to 'Articles', articles_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Settings', settings_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Statistics', statistics_path, class: 'nav-link' %>
+    </li>
+  </ul>
+</nav>

@@ -1,29 +1,48 @@
-<div class="row">
-  <div class="col s12">
-    <div class="row">
-      <div class="col s12">
-        <section class="actions-wrapper">
-          <%= render partial: 'actions' %>
-        </section>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="actions-wrapper">
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary active">
+            <input type="radio" name="sort" value="alpha" autocomplete="off" checked>
+            <i class="material-icons">sort_by_alpha</i>
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="sort" value="date" autocomplete="off">
+            <i class="material-icons">today</i>
+          </label>
+        </div>
+
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary active">
+            <input type="radio" name="height" value="half" autocomplete="off" checked>
+            <i class="material-icons">list</i>
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="height" value="full" autocomplete="off">
+            <i class="material-icons">view_list</i>
+          </label>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="col s12">
-        <section class="articles-wrapper">
-          <%= render @articles || 'There are no articles available.' %>
-        </section>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="list-group">
+            <%= render @articles || 'There are no articles available.' %>
+          </div>
+        </div>
       </div>
-    </div>
 
     <div class="row">
-      <div class="col s4 offset-s4 center">
+      <div class="col-sm-4 offset-s4 center">
         <%= will_paginate @articles %>
       </div>
     </div>
   </div>
 
-  <div class="fixed-action-btn" style="bottom: 30px; right: 55px;">
+  <div class="fixed-action-btn">
     <a class="up btn-floating btn-large red">
       <i class="large material-icons">keyboard_arrow_up</i>
     </a>

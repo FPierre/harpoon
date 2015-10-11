@@ -27,17 +27,17 @@
 //
 // Grayscale and brand colors for use across Bootstrap.
 
-// $gray-dark:                 #373a3c;
-// $gray:                      #55595c;
-// $gray-light:                #818a91;
-// $gray-lighter:              #eceeef;
-// $gray-lightest:             #f7f7f9;
+$gray-dark:                 #373a3c;
+$gray:                      #55595c;
+$gray-light:                #818a91;
+$gray-lighter:              #eceeef;
+$gray-lightest:             #f7f7f9;
 
-// $brand-primary:             #0275d8;
-// $brand-success:             #5cb85c;
-// $brand-info:                #5bc0de;
-// $brand-warning:             #f0ad4e;
-// $brand-danger:              #d9534f;
+$brand-primary:             #0275d8;
+$brand-success:             #5cb85c;
+$brand-info:                #5bc0de;
+$brand-warning:             #f0ad4e;
+$brand-danger:              #d9534f;
 
 
 // Options
@@ -45,11 +45,11 @@
 // Quickly modify global styling by enabling or disabling optional features.
 
 $enable-flex:               true;
-// $enable-rounded:            true;
-// $enable-shadows:            false;
+$enable-shadows:            true;
+$enable-rounded:            true;
 // $enable-gradients:          false;
-// $enable-transitions:        false;
-// $enable-hover-media-query:  false;
+$enable-transitions:        true;
+$enable-hover-media-query:  true;
 
 
 // Spacing
@@ -67,16 +67,16 @@ $enable-flex:               true;
 //
 // Settings for the `<body>` element.
 
-// $body-bg:                    #fff;
-// $body-color:                 $gray-dark;
+$body-bg:                    #EEE;
+$body-color:                 $gray-dark;
 
 
 // Links
 //
 // Style anchor elements.
 
-// $link-color:                 $brand-primary;
-// $link-hover-color:           darken($link-color, 15%);
+$link-color:                 $brand-primary;
+$link-hover-color:           darken($link-color, 15%);
 // $link-hover-decoration:      underline;
 
 
