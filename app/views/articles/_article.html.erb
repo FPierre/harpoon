@@ -1,9 +1,13 @@
 <a href="<%= article.url %>" class="article <%= half-size if @half_size %> list-group-item">
+  <span class="label label-default label-pill pull-right">1</span>
+
   <h4 class="list-group-item-heading"><%= article.title %></h4>
-  <i class="material-icons">grade</i>
-  <p class="list-group-item-text"><%= article.website %></p>
+
+  <p class="list-group-item-text"></p>
 </a>
-<!--
+
+  <!--
+<i class="material-icons">grade</i>
 %= article.created_at.strftime '%d' %>
 %= article.created_at.strftime '%b' %>
  -->
