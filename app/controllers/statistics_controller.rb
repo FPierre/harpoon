@@ -11,12 +11,12 @@ class StatisticsController < ApplicationController
   private
 
   def set_categories
-    config = Rails.application.config_for(:crawler)
+    config = Rails.application.config_for :crawler
     @categories = config['categories'].keys
   end
 
   def set_websites
-    config = Rails.application.config_for(:crawler)
+    config = Rails.application.config_for :crawler
     @websites = config['websites'].keys
   end
 end

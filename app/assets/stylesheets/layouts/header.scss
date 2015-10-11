@@ -1,12 +1,9 @@
 .header {
   .nav-wrapper {
-    // @extend .white;
-    @include header-background-color;
 
     font-weight: 300;
 
     li, a {
-      @extend .blue-grey-text, .text-darken-2;
     }
 
     .button-collapse {

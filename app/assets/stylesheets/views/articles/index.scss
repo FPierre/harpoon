@@ -1,6 +1,6 @@
 .pagination {
   a {
-    @extend .waves-effect;
+
   }
 
   .active {
@@ -24,7 +24,6 @@
       };
 
       i {
-        @extend .blue-grey-text, .text-darken-2;
       }
     }
   }
@@ -32,8 +31,6 @@
 
 .articles-wrapper {
   .article {
-    @extend .blue-grey-text, .text-darken-1;
-    @include transition(.1s);
 
     &.card-panel {
       padding: 0;
@@ -46,17 +43,14 @@
     &.keep {
       .keep {
         i {
-          @extend .amber-text;
         }
       }
     }
 
     .keep {
       i {
-        @include transition(.1s);
 
         &:hover {
-          @extend .amber-text;
         }
       }
     }
@@ -99,7 +93,6 @@
     }
 
     &:hover {
-      @extend .grey.lighten-3;
     }
 
     &.half-height {
@@ -133,7 +126,6 @@
 }
 
 .up {
-  @include transition(.1s);
 
   opacity: 0.2;
 

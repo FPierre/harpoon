@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
+    @article = Article.find params[:id]
 
     @article.destroy
     head :no_content
@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
   private
 
   def set_categories
-    config = Rails.application.config_for(:crawler)
+    config = Rails.application.config_for :crawler
     @categories = config['categories'].keys
   end
 end

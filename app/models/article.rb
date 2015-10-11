@@ -1,29 +1,25 @@
 class Article < ActiveRecord::Base
+  after_commit{ ArticleRelayJob.perform_later(self) }
+
   scope :by_category, ->(category){ where(category: category) }
   scope :by_tag, ->(tag){ where(tag: tag) }
   scope :by_website, ->(website){ where(website: website) }
 
-  after_commit{ ArticleRelayJob.perform_later(self) }
-
   # TODO Le passer en scope ?
-  def self.by_day(day)
+  def self.by_day day
     day = day.capitalize.to_s if day.is_a? Symbol
 
     Article.all.select{ |article| article.created_at.strftime("%A") == day }
   end
 
   # TODO Le passer en scope ?
-  def self.by_hour(start, stop)
+  def self.by_hour start, stop
     Article.all.select{ |article| article.created_at.hour.between?(start, stop) }
   end
 
   def self.percent_categories
-    config = Rails.application.config_for(:crawler)
-    data   = Array.new
-
-    config['categories'].keys.each{ |category| data << { label: category, value: Article.by_category(category).size, color: Article.random_color[:hex] }}
-
-    data
+    config = Rails.application.config_for :crawler
+    config['categories'].keys.inject([]){ |a, category| a << { label: category, value: Article.by_category(category).size }; a }
   end
 
   def self.percent_categories_days
@@ -39,7 +35,7 @@ class Article < ActiveRecord::Base
 
       data[:labels].each{ |day| articles_days << Article.by_category(category).by_day(day).size }
 
-      data[:datasets] << {
+      data[:datasets] << Hash[
         data:                 articles_days,
         label:                category,
         fillColor:            "rgba(#{color[:rgb]}, 0.2)",
@@ -48,7 +44,7 @@ class Article < ActiveRecord::Base
         pointStrokeColor:     color[:hex],
         pointHighlightFill:   color[:hex],
         pointHighlightStroke: "rgba(#{color[:rgb]}, 1)"
-      }
+      ]
     end
 
     data
@@ -69,7 +65,7 @@ class Article < ActiveRecord::Base
       [12, 14], [14, 16], [16, 18],
       [18, 20], [20, 22], [22, 00]].each{ |hour| articles_hours << Article.by_category(category).by_hour(hour[0], hour[1]).size }
 
-      data[:datasets] << {
+      data[:datasets] << Hash[
         data:                 articles_hours,
         label:                category,
         fillColor:            "rgba(#{color[:rgb]}, 0.2)",
@@ -78,7 +74,7 @@ class Article < ActiveRecord::Base
         pointStrokeColor:      color[:hex],
         pointHighlightFill:    color[:hex],
         pointHighlightStroke: "rgba(#{color[:rgb]}, 1)"
-      }
+      ]
     end
 
     data
