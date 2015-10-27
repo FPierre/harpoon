@@ -2,10 +2,10 @@
   background-color: #FFF;
   border-bottom: 1px solid $gray-lighter;
   -webkit-transition: padding .3s;
-  -moz-transition: padding .3s;
-  -ms-transition: padding .3s;
-  -o-transition: padding .3s;
-  transition: padding .3s;
+     -moz-transition: padding .3s;
+      -ms-transition: padding .3s;
+       -o-transition: padding .3s;
+          transition: padding .3s;
 
   &.shrink {
     @extend .p-a;

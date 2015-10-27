@@ -14,24 +14,32 @@
     </div>
   </div>
 
-  <div class="col-sm-2">
-    <select class="form-control">
-      <option>Filtrer par site Web</option>
+  <div class="col-sm-3">
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary dropdown-toggle"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filtrer par site Web
+      </button>
 
-      <% @websites.each do |website| %>
-        <option><%= website.name %></option>
-      <% end %>
-    </select>
-  </div>
+      <div class="dropdown-menu">
+        <% @websites.each do |website| %>
+          <a class="dropdown-item" href="#"><%= website.name %></a>
+        <% end %>
+      </div>
+    </div>
 
-  <div class="col-sm-2">
-    <select class="form-control">
-      <option>Filtrer par catégorie</option>
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary dropdown-toggle"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filtrer par catégorie
+      </button>
 
-      <% @categories.each do |category| %>
-        <option><%= category.name %></option>
-      <% end %>
-    </select>
+      <div class="dropdown-menu">
+        <% @categories.each do |category| %>
+          <a class="dropdown-item" href="#"><%= category.name %></a>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="col-sm-2">
