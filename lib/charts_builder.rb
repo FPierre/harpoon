@@ -1,5 +1,5 @@
 class ChartsBuilder
-  def format_for_pie_chart()
+  def format_for_pie_chart
     data = Array.new
 
     inputs.each do |input|

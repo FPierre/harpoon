@@ -1,7 +1,7 @@
-.list-group {
-  .list-group-item {
-    .list-group-item-heading {
-      font-size: 1rem;
-    }
+.list-group-item {
+  @extend .m-a;
+
+  .list-group-item-heading {
+    font-size: 1rem;
   }
 }

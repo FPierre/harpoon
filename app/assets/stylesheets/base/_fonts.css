@@ -1,6 +1,12 @@
 @font-face {
+  font-family: 'Big-John';
+  src: font-url('Big-John/Big-John.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Slim-Joe';
-  src: font-url('Slim-Joe/Slim-Joe.eot');
   src: font-url('Slim-Joe/Slim-Joe.eot') format('embedded-opentype'),
        font-url('Slim-Joe/Slim-Joe.woff') format('woff'),
        font-url('Slim-Joe/Slim-Joe.ttf') format('truetype');
@@ -8,3 +14,19 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Metrica';
+  src: font-url('Metrica/Metrica-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geomanist-Regular';
+  src: font-url('Geomanist-Regular/Geomanist-Regular.otf') format('opentype'),
+       font-url('Geomanist-Regular/Geomanist-Regular.eot') format('embedded-opentype'),
+       font-url('Geomanist-Regular/Geomanist-Regular.woff') format('woff'),
+       font-url('Geomanist-Regular/Geomanist-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

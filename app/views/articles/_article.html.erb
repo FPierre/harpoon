@@ -1,10 +1,37 @@
-<a href="<%= article.url %>" class="article <%= half-size if @half_size %> list-group-item">
-  <span class="label label-default label-pill pull-right">1</span>
+<article class="<%= half-size if @half_size %> list-group-item">
+  <div class="row">
+    <div class="col-sm-1">
+      <label class="c-input c-checkbox">
+        <input type="checkbox">
+        <span class="c-indicator"></span>
+      </label>
 
-  <h4 class="list-group-item-heading"><%= article.title %></h4>
+      <i class="material-icons">grade</i>
+    </div>
 
-  <p class="list-group-item-text"></p>
-</a>
+    <div class="col-sm-11">
+      <a href="<%= article.url %>">
+        <div class="row">
+          <div class="col-sm-1">
+            <span class="label label-default label-pill pull-right">1</span>
+          </div>
+
+          <div class="col-sm-7">
+            <h4 class="list-group-item-heading"><%= article.title %></h4>
+          </div>
+
+          <div class="col-sm-3">
+            <p class="list-group-item-text"></p>
+          </div>
+
+          <div class="col-sm-1">
+            <%= link_to 'Supprimer', article, method: :delete, remote: true, class: 'delete-article' %>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</article>
 
   <!--
 <i class="material-icons">grade</i>

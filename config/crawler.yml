@@ -1,57 +1,17 @@
 default: &default
-  categories:
-    javascript:
-      tags:
-        - javascript
-        - js
-        - meteor
-        - meteorjs
-    ruby:
-      tags:
-        - ruby
-        - ruby on rails
-        - rails
-        - active record
-    devops:
-      icon_name:
-      tags:
-        - devops
-        - docker
-    elasticsearch:
-      icon_name:
-      tags:
-        - elasticsearch
-        - elastic
-        - elk
-        - kibana
-        - logstash
-    linux mint:
-      icon_name:
-      tags:
-        - linux mint
-        - mint
-    material design:
-      icon_name:
-      tags:
-        - material design
-        - material
-        - flat design
-    materializecss:
-      tags:
-        - materializecss
-        - materialize
-  websites:
-    hackernews:
-      url: https://news.ycombinator.com/newest
-      dom_selector: '#hnmain table a[href^="http"]'
-    rubyflow:
-      url: http://www.rubyflow.com
-      dom_selector: '.inner.posts .post .body h1 a'
-      prefix: http://www.rubyflow.com
-    humancoders:
-      url: http://news.humancoders.com/items/newest
-      dom_selector: '#items .title a[href^="/"]:not(.site_type_link)'
-      prefix: http://news.humancoders.com
+
+  # websites:
+  #   hackernews:
+  #     url: https://news.ycombinator.com/newest
+  #     dom_selector: '#hnmain table a[href^="http"]'
+  #   rubyflow:
+  #     url: http://www.rubyflow.com
+  #     dom_selector: '.inner.posts .post .body h1 a'
+  #     prefix: http://www.rubyflow.com
+  #   humancoders:
+  #     url: http://news.humancoders.com/items/newest
+  #     dom_selector: '#items .title a[href^="/"]:not(.site_type_link)'
+  #     prefix: http://news.humancoders.com
 
 production:
   <<: *default

@@ -27,13 +27,13 @@
 //
 // Grayscale and brand colors for use across Bootstrap.
 
-$gray-dark:                 #373a3c;
+$gray-dark:                 #353D3F; // https://dribbble.com/shots/2316693-Logo
 $gray:                      #55595c;
 $gray-light:                #818a91;
-$gray-lighter:              #eceeef;
-$gray-lightest:             #f7f7f9;
+$gray-lighter:              #CCC;
+$gray-lightest:             #eceeef;
 
-$brand-primary:             #A1203C;
+$brand-primary:             #235179; // https://dribbble.com/shots/2317055--dailyUI-signup-form
 $brand-success:             #5cb85c;
 $brand-info:                #5bc0de;
 $brand-warning:             #f0ad4e;
@@ -57,7 +57,7 @@ $enable-flex:               true;
 // Control the default styling of most Bootstrap elements by modifying these
 // variables. Mostly focused on spacing.
 
-// $spacer:                     1rem;
+$spacer:                     1rem;
 // $spacer-x:                   $spacer;
 // $spacer-y:                   $spacer;
 // $border-width:               .0625rem;
@@ -67,7 +67,7 @@ $enable-flex:               true;
 //
 // Settings for the `<body>` element.
 
-$body-bg:                    #F5F5F5;
+$body-bg:                    #F6F6F6;
 $body-color:                 $gray-dark;
 
 
@@ -183,9 +183,9 @@ $font-family-base:           $font-family-sans-serif;
 // $line-height-lg:         (4 / 3);
 // $line-height-sm:         1.5;
 
-$border-radius:          .25rem;
-$border-radius-lg:       .25rem;
-$border-radius-sm:       .25rem;
+// $border-radius:          .25rem;
+// $border-radius-lg:       .25rem;
+// $border-radius-sm:       .25rem;
 
 // $component-active-color: #fff;
 // $component-active-bg:    $brand-primary;
@@ -267,9 +267,9 @@ $border-radius-sm:       .25rem;
 // $input-border:                   #ccc;
 // $input-box-shadow:               inset 0 1px 1px rgba(0,0,0,.075);
 
-// $input-border-radius:            $border-radius;
-// $input-border-radius-lg:         $border-radius-lg;
-// $input-border-radius-sm:         $border-radius-sm;
+$input-border-radius:               0;
+$input-border-radius-lg:            0;
+$input-border-radius-sm:            0;
 
 // $input-border-focus:             #66afe9;
 // $input-box-shadow-focus:         rgba(102,175,233,.6);
@@ -338,9 +338,9 @@ $border-radius-sm:       .25rem;
 
 // Navbar
 
-// $navbar-border-radius:              $border-radius;
-// $navbar-padding-horizontal:         $spacer;
-// $navbar-padding-vertical:           ($spacer / 2);
+$navbar-border-radius:              0;
+$navbar-padding-horizontal:         ($spacer * 2.5);
+$navbar-padding-vertical:           ($spacer * 1.5);
 
 // $navbar-dark-color:                 rgba(255,255,255,.5);
 // $navbar-dark-hover-color:           rgba(255,255,255,.75);
@@ -556,8 +556,8 @@ $border-radius-sm:       .25rem;
 
 // List group
 
-// $list-group-bg:                 #FFF;
-// $list-group-border:             #DDD;
+$list-group-bg:                 #FFF;
+$list-group-border:             $gray-lighter;
 $list-group-border-radius:      0;
 
 // $list-group-hover-bg:           #f5f5f5;

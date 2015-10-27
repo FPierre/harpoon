@@ -5,13 +5,15 @@
 // @import 'base/bootstrap-variables';
 @import 'base/fonts';
 @import 'base/custom';
+@import 'base/variables';
+// @import 'base/mixins';
 // @import 'bootstrap';
 @import 'bootstrap-flex';
 
 // http://blog.silvabox.com/materialize-on-rails-4-with-bower-and-heroku
-@import 'components/*';
 @import 'layouts/*';
 @import 'partials/*';
 // @import 'themes/dark';
 // @import 'themes/light';
 @import 'views/**/*';
+@import 'components/*';

@@ -3,8 +3,6 @@
 //= require turbolinks
 //= require bootstrap
 //= require Chart
-//= require articles
-//= require statistics
 //= require channels
 //
 //= require_tree .

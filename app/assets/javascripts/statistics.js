@@ -23,13 +23,13 @@ $(document).ready(function() {
 
   // chartPercentCategories = new Chart($('#chart-percent-categories').get(0).getContext('2d')).Line(percentCategories);
 
-  var percentCategories = $('.controller-data').data('percent-categories');
-  var options = { segmentShowStroke: false };
-  var myDoughnutChart = new Chart($('#chart-percent-categories').get(0).getContext('2d')).Doughnut(percentCategories, options);
+  // var percentCategories = $('.controller-data').data('percent-categories');
+  // var options = { segmentShowStroke: false };
+  // var myDoughnutChart = new Chart($('#chart-percent-categories').get(0).getContext('2d')).Doughnut(percentCategories, options);
 
-  var percentCategoriesDays = $('.controller-data').data('percent-categories-days');
-  var myLineChart = new Chart($('#chart-percent-categories-days').get(0).getContext('2d')).Line(percentCategoriesDays);
+  // var percentCategoriesDays = $('.controller-data').data('percent-categories-days');
+  // var myLineChart = new Chart($('#chart-percent-categories-days').get(0).getContext('2d')).Line(percentCategoriesDays);
 
-  var percentCategoriesHours = $('.controller-data').data('percent-categories-hours');
-  var myBarChart = new Chart($('#chart-percent-categories-hours').get(0).getContext('2d')).Line(percentCategoriesHours);
+  // var percentCategoriesHours = $('.controller-data').data('percent-categories-hours');
+  // var myBarChart = new Chart($('#chart-percent-categories-hours').get(0).getContext('2d')).Line(percentCategoriesHours);
 });

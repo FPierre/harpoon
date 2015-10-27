@@ -1,5 +1,20 @@
 class Article < ActiveRecord::Base
+  belongs_to :category
   belongs_to :website
+
+  validates :title, presence: true,
+                    length: {
+                      in: 5..255,
+                      too_short: "must have at least %{count} words",
+                      too_long: "must have at most %{count} words"
+                    }
+  validates :url, presence: true,
+                  length: {
+                    in: 10..255,
+                    too_short: "must have at least %{count} words",
+                    too_long: "must have at most %{count} words"
+                  }
+
 
   after_commit{ ArticleRelayJob.perform_later(self) }
 

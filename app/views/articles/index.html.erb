@@ -2,50 +2,21 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="actions-wrapper">
-        <div class="btn-group" data-toggle="buttons">
-          <label class="btn btn-primary active">
-            <input type="radio" name="sort" value="alpha" autocomplete="off" checked>
-            <i class="material-icons">sort_by_alpha</i>
-          </label>
-          <label class="btn btn-primary">
-            <input type="radio" name="sort" value="date" autocomplete="off">
-            <i class="material-icons">today</i>
-          </label>
-        </div>
-
-        <div class="btn-group" data-toggle="buttons">
-          <label class="btn btn-primary active">
-            <input type="radio" name="height" value="half" autocomplete="off" checked>
-            <i class="material-icons">list</i>
-          </label>
-          <label class="btn btn-primary">
-            <input type="radio" name="height" value="full" autocomplete="off">
-            <i class="material-icons">view_list</i>
-          </label>
-        </div>
+        <%= render 'actions' %>
       </div>
     </div>
   </div>
 
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="list-group">
-            <%= render @articles || 'There are no articles available.' %>
-          </div>
-        </div>
-      </div>
-
-    <div class="row">
-      <div class="col-sm-4 offset-s4 center">
-        <%= will_paginate @articles %>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="list-group">
+        <%= render @articles || 'There are no articles available.' %>
       </div>
     </div>
   </div>
 
-  <div class="fixed-action-btn">
-    <a class="up btn-floating btn-large red">
-      <i class="large material-icons">keyboard_arrow_up</i>
-    </a>
+  <div class="">
+    <button type="button" class="btn btn-primary"><i class="large material-icons">keyboard_arrow_up</i></button>
   </div>
 </div>
 

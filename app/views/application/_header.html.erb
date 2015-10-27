@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar navbar-fixed-top">
   <%= link_to 'Harpoon', root_path, class: 'navbar-brand' %>
 
   <ul class="nav navbar-nav">
@@ -12,4 +12,8 @@
       <%= link_to 'Statistics', statistics_path, class: 'nav-link' %>
     </li>
   </ul>
+
+  <form class="form-inline navbar-form pull-right">
+    <input type="text" class="form-control" placeholder="Chercher">
+  </form>
 </nav>

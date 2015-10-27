@@ -1,6 +1,4 @@
-jQuery(document).ready(function($) {
-  $('.button-collapse').sideNav();
-
+$(document).on('ready page:load', function() {
   // TODO Passer à Toggle
   $('.half-height').click(function() {
     $.ajax({

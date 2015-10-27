@@ -1,32 +1,22 @@
 class Crawler
-  def initialize(websites, categories)
-    @mechanize  = Mechanize.new
-    @websites   = websites
-    @categories = categories
+  def initialize
+    @mechanize = Mechanize.new
   end
 
-  def get_articles
-    selected_articles = Hash.new({})
+  def find_articles
+    articles = Array.new
 
-    @websites.each do |website|
-      page  = @mechanize.get(website[1]['url'])
-      links = page.root.css(website[1]['dom_selector'])
+    Website.all.each do |website|
+      page  = @mechanize.get website.url
+      links = page.root.css website.dom_selector
 
       links.each do |link|
-        @categories.each do |category|
-          category[1]['tags'].each do |tag|
-          # tags.each do |tag|
-            if match_tag(normalize(link.text), tag)
-              selected_articles[category[0].to_sym] = Hash.new if selected_articles[category[0].to_sym]
+        Category.all.each do |category|
+          category.tags.each do |tag|
+            if match_tag(normalize(link.text), tag.name)
+              url = website.prefix ? build_url(website.prefix, link['href']) : build_url(link['href'])
 
-              if website[1]['prefix']
-                url = "#{website[1]['prefix']}#{link['href']}"
-              else
-                url = link['href']
-              end
-
-              selected_articles[category[0].to_sym].merge!({ text: link.text, url: url, tag: tag, website: website })
-
+              articles << { title: link.text, url: url, website: website, category: category }
               break
             end
           end
@@ -34,19 +24,24 @@ class Crawler
       end
     end
 
-    ap selected_articles
-    return selected_articles
+    # ap articles
+
+    return articles
   end
 
   private
 
-  def normalize(string_in)
+  def normalize string_in
     string_in.strip.parameterize
   end
 
-  def match_tag(text, tag)
+  def match_tag text, tag
     # Regexp.quote is important
     # http://stackoverflow.com/a/150598
     text =~ /#{Regexp.quote(tag)}/
+  end
+
+  def build_url *segments
+    segments.compact.join ''
   end
 end

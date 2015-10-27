@@ -10,7 +10,9 @@
   <script src="//rawgit.com/ngryman/jquery.finger/v0.1.2/dist/jquery.finger.js"></script>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body data-namespace="<%= controller_name.deconstantize %>"
+      data-controller="<%= controller_name.demodulize %>"
+      data-action="<%= action_name %>">
   <%= render 'header' %>
 
   <main>
