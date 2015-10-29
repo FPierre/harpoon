@@ -1,64 +1,68 @@
-<div class="row">
-  <div class="col-sm-1">
-    <label class="c-input c-checkbox">
-      <input type="checkbox">
-      <span class="c-indicator"></span>
-    </label>
-  </div>
-
-  <div class="col-sm-2">
-    <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary"><i class="material-icons">grade</i></button>
-      <button type="button" class="btn btn-secondary"><i class="material-icons">hourglass_empty</i></button>
-      <button type="button" class="btn btn-secondary"><i class="material-icons">delete</i></button>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-1">
+      <label id="chk-all-articles" class="c-input c-checkbox">
+        <input type="checkbox">
+        <span class="c-indicator"></span>
+      </label>
     </div>
-  </div>
 
-  <div class="col-sm-3">
-    <div class="btn-group">
-      <button type="button" class="btn btn-secondary dropdown-toggle"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Filtrer par site Web
-      </button>
-
-      <div class="dropdown-menu">
-        <% @websites.each do |website| %>
-          <a class="dropdown-item" href="#"><%= website.name %></a>
-        <% end %>
+    <div class="col-xs-2">
+      <div class="btn-group" role="group" aria-label="Actions">
+        <button type="button" class="btn btn-secondary"><i class="material-icons">grade</i></button>
+        <button type="button" class="btn btn-secondary"><i class="material-icons">hourglass_empty</i></button>
+        <button type="button" class="btn btn-secondary btn-delete"><i class="material-icons">delete</i></button>
       </div>
     </div>
 
-    <div class="btn-group">
-      <button type="button" class="btn btn-secondary dropdown-toggle"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Filtrer par catégorie
-      </button>
+    <div class="col-xs-3">
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Filtrer par site Web
+        </button>
 
-      <div class="dropdown-menu">
-        <% @categories.each do |category| %>
-          <a class="dropdown-item" href="#"><%= category.name %></a>
-        <% end %>
+        <div class="dropdown-menu">
+          <% @websites.each do |website| %>
+            <a  href="#" class="dropdown-item"><%= website.name %></a>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Filtrer par catégorie
+        </button>
+
+        <div class="dropdown-menu">
+          <% @categories.each do |category| %>
+            <a href="#" class="dropdown-item"><%= category.name %></a>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-sm-2">
-    <%= will_paginate @articles %>
-  </div>
+    <div class="col-xs-2">
+      <%= will_paginate @articles %>
+    </div>
 
-  <div class="col-sm-1">
-    <div class="btn-group">
-      <button type="button" class="btn btn-secondary dropdown-toggle"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="material-icons">settings</i>
-      </button>
+    <div class="col-xs-1">
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="material-icons">settings</i>
+        </button>
 
-      <div class="dropdown-menu">
-        <span class="dropdown-item">Densité d'affichage :</span>
-        <a class="dropdown-item" href="#"><i class="material-icons">done</i>Standard</a>
-        <a class="dropdown-item" href="#">Compacte</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Aide</a>
+        <div class="dropdown-menu">
+          <span class="dropdown-item">Densité d'affichage :</span>
+          <a href="#" class="dropdown-item"><i class="material-icons">done</i>Standard</a>
+          <a href="#" class="dropdown-item">Compacte</a>
+
+          <div class="dropdown-divider"></div>
+
+          <a href="#" class="dropdown-item">Aide</a>
+        </div>
       </div>
     </div>
   </div>

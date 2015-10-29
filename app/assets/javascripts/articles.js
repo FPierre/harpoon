@@ -1,4 +1,22 @@
 $(document).on('ready page:load', function() {
+  $('#chk-all-articles').change(function() {
+    $('.article input[type=checkbox]').prop('checked', function(i, value) {
+      return !value;
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
   // TODO Passer à Toggle
   $('.half-height').click(function() {
     $.ajax({
