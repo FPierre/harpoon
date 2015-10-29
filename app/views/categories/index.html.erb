@@ -1,0 +1,193 @@
+<!--
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-xs-6">
+            <%= postal_code_field_tag 'postal-code', nil, { class: 'form-control', completion_fields: 'city-name' } %>
+          </div>
+
+          <div class="col-xs-6">
+            <%= city_name_field_tag 'city-name', nil, { class: 'form-control', completion_fields: 'postal-code' } %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <%= agency_name_field_tag 'agency-name', nil, {
+                                      class: 'form-control',
+                                      postal_code_field: 'postal-code',
+                                      city_name_field: 'city-name',
+                                      agencies_type_field: 'agency-type' } %>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary">Valider</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= form_for @obituary do |f| %>
+    <div class="row">
+      <div id="error_explanation">
+        <h2><%= I18n.t(:obituary, scope: 'helpers.failure') %></h2>
+
+        <ul>
+          <% (@obituary.errors.keys - ['user.obituaries'.to_sym]).each do |attribute| %>
+            <li><%= @obituary.errors.full_messages_for(attribute).first %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-1 col-xs-offset-4 text-center">
+        <%= f.select %>
+        <select class="form-control">
+          <option value="male">M.</option>
+          <option value="female">Mme.</option>
+          <option value="other">Autre</option>
+        </select>
+      </div>
+
+      <div class="col-xs-3 text-left">
+        Pierre Meyer
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-2 col-xs-offset-2">
+        Né le
+        <%= f.text_field :birth_date, {
+                         class: ['form-control', 'datepicker']
+                         placeholder: t(:birth_date, scope: 'activerecord.attributes.obituary') } %>
+      </div>
+
+
+
+      <div class="col-xs-2">
+        Décédé le
+        <%= f.text_field :death_date, {
+                         class: ['form-control', 'datepicker'],
+                         placeholder: t(:death_date, scope: 'activerecord.attributes.obituary') } %>
+      </div>
+
+      <div class="col-xs-2">
+        à
+        <%= f.text_field :death_place, {
+                         class: 'form-control',
+                         placeholder: t(:death_place, scope: 'activerecord.attributes.obituary') } %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="content-secondary" style="border: 1px solid #333;">
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="button" class="m-t btn btn-primary btn-block">Famille</button>
+          </div>
+        </div>
+
+        <% @categories.each do |category| %>
+          <div class="row">
+            <div class="col-xs-12">
+              <button type="button" class="m-t btn btn-primary btn-block"><%= category.name %></button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="content-main" style="border: 1px solid #333;">
+        <div class="row">
+          <div class="col-xs-12">
+            <%= f.text_area :announcement, {
+                            rows: 3,
+                            class: 'm-t form-control',
+                            placeholder: t(:announcement, scope: 'activerecord.attributes.obituary') } %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2 text-center">
+            <select class="m-t form-control">
+              <option>Ont la tristesse de vous faire part du décès de</option>
+            </select>
+
+            <p class="m-t">Monsieur Pierre Meyer</p>
+            <p>Survenue le 2 Novembre 2015, à Dijon, à l'âge de 78 ans</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="m-t-md" data-toggle="modal" data-target="#myModal">Le défunt repose à Dijon au funérarium Henry Paul, jusqu'au Mercredi 9 Novembre 2015.
+            La levée du corps aura lieu de 14h30 à 15h30</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="m-t">La cérémonie civile aura lieu le Mercredi 9 Novembre 2015 de 14h30 à 15h30 à Dijon au
+            crématorium rue du Colonel Fabien</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="m-t">La crémation se déroulera à Dijon au crématorium rue du Colonel Fabien</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="m-t">Suivi de la dispersion des cendres à</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-4 col-xs-offset-2">
+        <button type="button" class="m-t btn btn-primary">Valider l'avis de décès</button>
+      </div>
+
+      <div class="col-xs-4">
+        <button type="button" class="m-t btn btn-primary">Créer la fiche pratique des obsèques</button>
+      </div>
+    </div>
+  <% end %>
+</div>
+ -->
+
+
+
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Categories</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <% @categories.each do |category| %>
+        <%= category.name %>
+      <% end %>
+    </div>
+  </div>
+</div>
+ -->

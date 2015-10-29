@@ -1,0 +1,23 @@
+.content-main {
+  @include make-col();
+
+  @include media-breakpoint-down(md) {
+    @include make-col-span(12);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include make-col-span(10);
+  }
+}
+
+.content-secondary {
+  @include make-col();
+
+  @include media-breakpoint-down(md) {
+    @include make-col-span(12);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include make-col-span(2);
+  }
+}

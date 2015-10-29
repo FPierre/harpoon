@@ -2,13 +2,13 @@
  *= require_self
  */
 
-// @import 'base/bootstrap-variables';
-@import 'base/fonts';
 @import 'base/custom';
+@import 'bootstrap-flex';
+@import 'base/fonts';
+@import 'base/global';
 @import 'base/variables';
 // @import 'base/mixins';
 // @import 'bootstrap';
-@import 'bootstrap-flex';
 
 // http://blog.silvabox.com/materialize-on-rails-4-with-bower-and-heroku
 @import 'layouts/*';
