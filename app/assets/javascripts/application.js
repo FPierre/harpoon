@@ -3,9 +3,11 @@
 //= require turbolinks
 //= require bootstrap
 //= require Chart
-//= require channels
 //
-//= require_tree .
+//= require channels
+//= require global
+//= require articles/destroy
+//= require header
 
 // https://dribbble.com/shots/2191473-Questionnaire-Step/attachments/404768
 // https://dribbble.com/shots/2191473-Questionnaire-Step/attachments/404767

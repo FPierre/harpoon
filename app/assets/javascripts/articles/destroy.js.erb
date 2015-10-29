@@ -1,0 +1,37 @@
+// $('.article input[type=checkbox]').bind('ajax:success', function() {
+//   $(this).closest('.article').fadeOut('fast');
+// });
+
+<% self.class.include Rails.application.routes.url_helpers %>
+
+$(document).on('ready page:load', function() {
+  $('.btn-delete').click(function() {
+    if ($('.article input[type=checkbox]:checked').length > 0) {
+      var articlesIds      = [];
+          $checkedArticles = $('.article input[type=checkbox]:checked');
+
+      $checkedArticles.each(function(index) {
+        articlesIds.push($(this).closest('.article').data('public-id'));
+      });
+
+      $.ajax({
+        url: '<%= articles_delete_path %>',
+        method: 'DELETE',
+        data: { 'articles_ids': articlesIds },
+        context: $checkedArticles,
+        success: function(data, textStatus, jqXHR) {
+          console.log($checkedArticles);
+
+          $checkedArticles.each(function(index) {
+            $(this).closest('.article').fadeOut('slow', function() {
+              $(this).remove();
+            });
+          });
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log('error');
+        }
+      });
+    }
+  });
+});
