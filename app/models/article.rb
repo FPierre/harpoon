@@ -15,12 +15,19 @@ class Article < ActiveRecord::Base
                     too_long: "must have at most %{count} words"
                   }
 
+  validates_uniqueness_of :public_id
+
+  before_validation :set_public_id
 
   after_commit{ ArticleRelayJob.perform_later(self) }
 
   scope :by_category, ->(category){ where(category: category) }
   scope :by_tag, ->(tag){ where(tag: tag) }
   scope :by_website, ->(website){ where(website: website) }
+
+  def set_public_id
+    self.public_id = UniqueIdService::generate unless self.public_id
+  end
 
   # TODO Le passer en scope ?
   def self.by_day day

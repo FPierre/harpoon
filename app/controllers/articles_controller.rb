@@ -14,8 +14,14 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully deleted' }
       format.json { head :no_content }
-      format.js { render layout: false }
+      format.js   { render layout: false }
     end
+  end
+
+  def destroy_all
+    Article.delete_all public_id: params[:articles_ids]
+
+    render json: :ok
   end
 
   def sort
