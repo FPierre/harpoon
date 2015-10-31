@@ -2,12 +2,12 @@
   <nav class="navbar navbar-fixed-top">
     <div class="row">
       <div class="col-xs-12">
-        <div class="collapse" id="exCollapsingNavbar">
+        <div class="collapse" id="collapsing-navbar">
           <div class="p-a">
             <ul class="nav navbar-nav">
-              <li class="nav-item"><%= link_to 'Articles',   articles_path,   class: 'nav-link' %></li>
-              <li class="nav-item"><%= link_to 'Settings',   settings_path,   class: 'nav-link' %></li>
-              <li class="nav-item"><%= link_to 'Statistics', statistics_path, class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to t(:articles),   articles_path,   class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to t(:settings),   settings_path,   class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to t(:statistics), statistics_path, class: 'nav-link' %></li>
             </ul>
           </div>
         </div>
@@ -21,20 +21,20 @@
 
       <div class="col-sm-6 hidden-xs-down">
         <ul class="nav navbar-nav">
-          <li class="nav-item"><%= link_to 'Articles',   articles_path,   class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'Settings',   settings_path,   class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'Statistics', statistics_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to t(:articles),   articles_path,   class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to t(:settings),   settings_path,   class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to t(:statistics), statistics_path, class: 'nav-link' %></li>
         </ul>
       </div>
 
       <div class="col-sm-2 hidden-xs-down">
         <form class="form-inline navbar-form pull-right">
-          <input type="text" class="form-control" placeholder="Chercher">
+          <input type="text" class="form-control" placeholder="<%= t :search %>">
         </form>
       </div>
 
       <div class="col-xs-2 hidden-sm-up">
-        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsing-navbar">
           &#9776;
         </button>
       </div>
