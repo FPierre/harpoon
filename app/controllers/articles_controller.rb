@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :set_websites,   only: :index
 
   def index
-    @articles  = Article.paginate(page: params[:page], per_page: 40).order(created_at: :desc)
+    @articles  = Article.paginate(page: params[:page], per_page: 110).order(created_at: :desc)
     @half_size = cookies[:half_size]
   end
 

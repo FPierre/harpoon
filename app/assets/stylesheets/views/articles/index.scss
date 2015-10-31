@@ -1,10 +1,22 @@
-select.form-control {
-  // border: none;
-  // border-bottom: 1px solid $gray-lighter;
-}
+.article {
+  @include media-breakpoint-down(md) {
+    margin-top: .7rem;
+  }
 
-article {
-  input[type=checkbox]:checked {
+  @include media-breakpoint-up(md) {
+    margin-top: .5rem;
+  }
 
+  z-index: 2;
+  -webkit-box-shadow: 0 0.9px 4px 0.8px #CDCDCD;
+          box-shadow: 0 0.9px 4px 0.8px #CDCDCD;
+
+  .test {
+    position: absolute;
+    right: 0;
+    width: 130px;
+    // height: 30px;
+    background-color: red;
+    z-index: 1;
   }
 }

@@ -1,11 +1,21 @@
 .navbar {
   background-color: #FFF;
-  border-bottom: 1px solid $gray-lighter;
+  // border-bottom: 1px solid $gray-lighter;
   -webkit-transition: padding .3s;
      -moz-transition: padding .3s;
       -ms-transition: padding .3s;
        -o-transition: padding .3s;
           transition: padding .3s;
+
+  @include media-breakpoint-down(md) {
+    -webkit-box-shadow: 0 0.9px 4px 0.8px #CCC;
+            box-shadow: 0 0.9px 4px 0.8px #CCC;
+  }
+
+  @include media-breakpoint-up(md) {
+    -webkit-box-shadow: 0 0.9px 4px 0.8px #BBB;
+            box-shadow: 0 0.9px 4px 0.8px #BBB;
+  }
 
   &.shrink {
     @extend .p-a;

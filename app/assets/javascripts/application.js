@@ -4,9 +4,9 @@
 //= require bootstrap
 //= require Chart
 //
-//= require channels
 //= require global
 //= require articles/destroy
+//= require article
 //= require header
 
 // https://dribbble.com/shots/2191473-Questionnaire-Step/attachments/404768

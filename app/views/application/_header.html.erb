@@ -1,19 +1,43 @@
-<nav class="navbar navbar-fixed-top">
-  <%= link_to 'Harpoon', root_path, class: 'navbar-brand' %>
+<div class="container-fluid">
+  <nav class="navbar navbar-fixed-top">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="collapse" id="exCollapsingNavbar">
+          <div class="p-a">
+            <ul class="nav navbar-nav">
+              <li class="nav-item"><%= link_to 'Articles',   articles_path,   class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to 'Settings',   settings_path,   class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to 'Statistics', statistics_path, class: 'nav-link' %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <ul class="nav navbar-nav">
-    <li class="nav-item">
-      <%= link_to 'Articles', articles_path, class: 'nav-link' %>
-    </li>
-    <li class="nav-item">
-      <%= link_to 'Settings', settings_path, class: 'nav-link' %>
-    </li>
-    <li class="nav-item">
-      <%= link_to 'Statistics', statistics_path, class: 'nav-link' %>
-    </li>
-  </ul>
+    <div class="row">
+      <div class="col-xs-10 col-sm-3">
+        <%= link_to 'Harpoon', root_path, class: 'navbar-brand' %>
+      </div>
 
-  <form class="form-inline navbar-form pull-right">
-    <input type="text" class="form-control" placeholder="Chercher">
-  </form>
-</nav>
+      <div class="col-sm-6 hidden-xs-down">
+        <ul class="nav navbar-nav">
+          <li class="nav-item"><%= link_to 'Articles',   articles_path,   class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Settings',   settings_path,   class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Statistics', statistics_path, class: 'nav-link' %></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-2 hidden-xs-down">
+        <form class="form-inline navbar-form pull-right">
+          <input type="text" class="form-control" placeholder="Chercher">
+        </form>
+      </div>
+
+      <div class="col-xs-2 hidden-sm-up">
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+          &#9776;
+        </button>
+      </div>
+    </div>
+  </nav>
+</div>

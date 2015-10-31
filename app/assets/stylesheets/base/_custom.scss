@@ -67,7 +67,7 @@ $spacer:                     1rem;
 //
 // Settings for the `<body>` element.
 
-$body-bg:                    #F6F6F6;
+$body-bg:                    #F2F2F2;
 $body-color:                 $gray-dark;
 
 
@@ -557,7 +557,7 @@ $navbar-padding-vertical:           ($spacer * 1.5);
 // List group
 
 $list-group-bg:                 #FFF;
-$list-group-border:             $gray-lighter;
+$list-group-border:             none;
 // $list-group-border-radius:      0;
 
 // $list-group-hover-bg:           #f5f5f5;
