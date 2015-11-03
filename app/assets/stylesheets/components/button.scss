@@ -1,0 +1,12 @@
+.btn-round {
+  @extend .btn;
+
+  width: 60px;
+  height: 60px;
+  padding: 0; // Reset
+  padding-top: 5px;
+  border-radius: 100px;
+
+  -webkit-box-shadow: 0 0.9px 4px 0.8px #CDCDCD;
+          box-shadow: 0 0.9px 4px 0.8px #CDCDCD;
+}
