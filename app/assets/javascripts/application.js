@@ -4,7 +4,6 @@
 //= require bootstrap
 //= require Chart
 //
-//= require global
 //= require articles/destroy
 //= require article
 //= require header
