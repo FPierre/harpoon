@@ -1,55 +1,30 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-6 col-sm-3">
-      <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Filtrer par site Web
-        </button>
+<div class="row m-y-md">
+  <div class="col-xs-6 col-sm-2">
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary dropdown-toggle"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filtrer par site Web
+      </button>
 
-        <div class="dropdown-menu">
-          <% @websites.each do |website| %>
-            <a  href="#" class="dropdown-item"><%= website.name %></a>
-          <% end %>
-        </div>
+      <div class="dropdown-menu">
+        <% @websites.each do |website| %>
+          <a  href="#" class="dropdown-item"><%= website.name %></a>
+        <% end %>
       </div>
     </div>
+  </div>
 
-    <div class="col-xs-6 col-sm-3">
-      <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Filtrer par catégorie
-        </button>
+  <div class="col-xs-6 col-sm-2">
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary dropdown-toggle"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filtrer par catégorie
+      </button>
 
-        <div class="dropdown-menu">
-          <% @categories.each do |category| %>
-            <a href="#" class="dropdown-item"><%= category.name %></a>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-xs-6 col-sm-2">
-      <%= will_paginate @articles %>
-    </div>
-
-    <div class="col-xs-6 col-sm-2">
-      <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="material-icons">settings</i>
-        </button>
-
-        <div class="dropdown-menu">
-          <span class="dropdown-item">Densité d'affichage :</span>
-          <a href="#" class="dropdown-item"><i class="material-icons">done</i>Standard</a>
-          <a href="#" class="dropdown-item">Compacte</a>
-
-          <div class="dropdown-divider"></div>
-
-          <a href="#" class="dropdown-item">Aide</a>
-        </div>
+      <div class="dropdown-menu">
+        <% @categories.each do |category| %>
+          <a href="#" class="dropdown-item"><%= category.name %></a>
+        <% end %>
       </div>
     </div>
   </div>

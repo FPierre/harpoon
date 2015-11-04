@@ -8,7 +8,7 @@ namespace :crawler do
     crawler = Crawler.new
 
     crawler.find_articles.each do |article|
-      Article.create(article) unless Article.exist? url: article[:url]
+      Article.create(article) unless Article.exists? url: article[:url]
     end
   end
 

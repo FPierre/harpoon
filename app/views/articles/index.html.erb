@@ -7,7 +7,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row m-b-md">
     <div class="col-xs-12">
       <div id="articles" class="list-group">
         <%= render @articles || 'There are no articles available.' %>
@@ -17,11 +17,16 @@
 
   <div class="navbar-fixed-bottom m-b">
     <div class="row">
-      <div class="col-xs-2 p-l-md">
+      <div class="col-xs-1 p-l-md">
         <button type="button" class="btn-round btn-primary"><i class="material-icons">keyboard_arrow_up</i></button>
       </div>
 
-      <div class="col-xs-6 col-xs-offset-4 p-r-md">
+      <div class="col-xs-3">
+        <button type="button" class="btn-round btn-secondary"><i class="material-icons">keyboard_arrow_left</i></button>
+        <button type="button" class="btn-round btn-secondary"><i class="material-icons">keyboard_arrow_right</i></button>
+      </div>
+
+      <div class="col-xs-5 col-xs-offset-3 p-r-md">
         <div id="actions-bar" class="pull-right">
           <button type="button" class="m-l btn-round btn-danger btn-delete">
             <i class="material-icons">delete</i>

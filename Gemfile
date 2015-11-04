@@ -26,6 +26,7 @@ gem 'turbolinks'
 gem 'actioncable', github: 'rails/actioncable'
 gem 'puma'
 gem 'bootstrap', github: 'twbs/bootstrap-rubygem'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
